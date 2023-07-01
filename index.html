@@ -4,11 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Mortgage Calculator</title>
 </head>
 
 <body>
-    
+
+<!--calculator form-->
+
+    <h1>Mortage calculator for a first-time home buyer in Irelnd</h1>
+    <hr>
+    <form action="">
+
+        <label for="mortgage-amount">Mortgage amount </label>
+            <!-- <span style="position: absolute; margin-left: 1px; margin-top: 1px;">€</span>
+            code is attributed to Sebastian in 
+            https://stackoverflow.com/questions/2913236/html-text-input-field-with-currency-symbol-->
+        <span>€</span>
+        <input type="number" name="mortgage-amount" id="mortgage-amount" required>
+        
+        <label for="range"></label>
+        <input type="range" name="range" id="range" min="0" max="1000000">
+
+            <br>
+
+        <label for="borrowing-rate">Borrowing rate</label>
+        <span>%</span>
+        <input type="number" name="borrowing-rate" id="borrowing-rate" required>
+
+            <br>
+
+        <label for="mortgage-term">Mortgage term</label>
+        <span>
+            <i class="fa-solid fa-calendar-days"></i>
+        </span>
+        <input type="number" name="mortgage-term" id="mortgage-term" required>
+        
+
+
+    </form>
+
+
+<!--font awesome script-->
+    <script src="https://kit.fontawesome.com/9e5468dc87.js" crossorigin="anonymous"></script>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
