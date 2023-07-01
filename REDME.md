@@ -18,11 +18,11 @@ Back in 1980's in Ireland the interest rates went up to 16% due to inflation (re
 <summary><a href="#ux">UX</a></summary>
 
 - [Reader Goals](#reader-goals)
-    - [Target readers](#target-readers)
+    - [Target users](#target-users)
     - [User Goals](#user-goals)
       - Calculator
       - [First time home buyer Goals](#first-time-hone-buyer-goals)
-- [Blogger Requirement](#blogger-requirement)
+- [ Buyer Requirement](#buyer-requirement)
 - [User Stories](#user-stories)
 - [Visual Design](#visual-design)
   - [Wireframes](#wireframes)
@@ -56,7 +56,9 @@ Back in 1980's in Ireland the interest rates went up to 16% due to inflation (re
 # UX
 ## First-time home buyer Goals
 
-### Target readers
+### Target users
+
+* Anyone in Ireland who is considering buying their first home and have already been to a bank/s and are looking to estimate a good deal factoring in potential rise in interest rates as per ECB.
 
 ### User Goals
 
@@ -70,9 +72,22 @@ Back in 1980's in Ireland the interest rates went up to 16% due to inflation (re
 
 ## User Stories
 
+ * Couple
 
+ * Single individual
+
+ * Someone who wants to become aware of any government scheme to help get onto the property ladder
+
+ * Someone who may be looking to take on a longterm mortage - e.g. 35 years
+
+ * Someone who wants to get a mortgage for a short time and pay off as soon as possible
+
+ * Someone who is not sure what kind of mortage is best and got a few  quotes (fixed and variable) and want to find out which one is best.
+
+ * Someone who wants to consider best and worst case scenario.
 
 ## Visual Design
+
 
 ### [Wireframes]
 
@@ -111,16 +126,22 @@ note (add a colour to it)
 ![Form Landscape](./assets/images/website_form_tablet.png)
 ![Form Mobile](./assets/images/website_form_mobile.png)
 
-* I have kept the form with as little boxes to fill as possible, however, email, name and message boxes are required so you could not send an empty form. 
-* This page is also intentionally kept minimalistic and only the form is in the center of a page no matter what device you will have. 
-* With nothing but the form the aim is to minimise distractions and help the user fill the form fast easy and then with the header and footer at the users finger tips - the user can get back to what they were previously doing.
+* 
+* 
+* 
 
 # Tech 
+
+## Deployment
+
+* GITHUB: Used Code Institute template to start a repository in Github
+* IDE: Linked it to VS Code (due to sever lagging issues with Codeanywhere )
 
 ##  Technologies Used 
 * HTL 
 * CSS 
 * JavaScript
+* Prettier extension in VSCode
 
 ## Libraries
 * fontawesome
@@ -137,10 +158,7 @@ note (add a colour to it)
 *
 *
 *
-* Validated by W3C HTML5 Validator, W3C CSS Validator and JSHint JavaScript Validator.
-* Tested in DevTools, on Iphone DE, Samsung Tablet, Apple Ipod, OnePlus phone and Macbook Pro. 
-* Site was shared with friends and family for further testing and feedback.
-* Each link, button and feature were checked in the above devices and environments horizontally and vertically. 
+*
 
 
 ## Bugs
@@ -153,6 +171,7 @@ note (add a colour to it)
 
 ### Credits
 * [Bla](xxx).
+* VSCode Extensions from Coding Tech YouTube channel https://www.youtube.com/watch?v=ezhugY8TJDU that inspired me to use Prettier VSCode extension. 
 
 <!--Granted logo from CSS validator-->
 <p>
