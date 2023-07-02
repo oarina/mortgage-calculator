@@ -1,0 +1,58 @@
+<!--Test 1 slider-->
+<!--
+<label for="numberSlider">Number:</label>
+<input type="range" id="numberSlider" name="numberSlider" min="0" max="100" value="50" onchange="updateNumber(this.value)">
+<p id="numberValue">50</p>
+
+<script>
+function updateNumber(value) {
+    document.getElementById("numberValue").textContent = value;
+}
+</script>
+
+<!--Test 2 slider-->
+<!--
+<form>
+    <label for="mortgage-amount">Mortgage Amount:</label>
+    <input type="number" name="mortgage-amount" id="mortgage-amount" required>
+    
+    <label for="numberSlider">Number:</label>
+    <input type="range" id="numberSlider" name="numberSlider" min="0" max="100" value="50" onchange="updateNumber(this.value)">
+    <p id="numberValue">50</p>
+</form>
+
+<script>
+    function updateNumber(value) {
+    document.getElementById("numberValue").textContent = value;
+    }
+</script>
+
+-->
+
+<form>
+    <label for="mortgage-amount">Mortgage Amount</label>
+    <span>€</span>
+    <input type="number" name="mortgage-amount" id="mortgage-amount" required onchange="updateMortggeSliderAmount(this.value)">
+    <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
+        a function will then change that same value in the ID linked element. -->
+    <label for="mortgageSlider"></label>
+    <input type="range" id="mortgageSlider" name="mortgageSlider" min="0" max="1000000" value="500000" onchange="updateMortgageAmount(this.value)">
+    
+    <br>
+
+    <p>Having an issue with the number dissapearing after i put it into the amount field.</p>
+    <p>We're going to have multiple fields, so we need to prefent that from happening.</p>
+
+  </form>
+  
+  <script>
+    /* This function is called from the onchange element in HTML that needs to change and will
+    fetch the value from the ID linked element and paste the change to the onclick*/ 
+    function updateMortgageAmount(value) {
+      document.getElementById("mortgage-amount").value = value;
+    }
+
+    function updateMortggeSliderAmount(value) {
+        document.getElementById("mortgageSlider").value = value;
+    }
+  </script>

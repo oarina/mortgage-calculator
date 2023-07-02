@@ -126,7 +126,7 @@ note (add a colour to it)
 ![Form Landscape](./assets/images/website_form_tablet.png)
 ![Form Mobile](./assets/images/website_form_mobile.png)
 
-* 
+* Want to have a range bar that slides to change the number in the form easily
 * 
 * 
 
