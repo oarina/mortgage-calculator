@@ -63,15 +63,15 @@
 
 <div class="issues-seciton">
     <h3><i class="fa-regular fa-hand-point-right fa-beat-fade"></i> Issues:</h3>
-
-    <h4>Biggest issue is that there is no way to accurately to calculate the cost of mortgage.</h4>
-    <p>The interst rate will never be the same throughout the entire duration of the mortgage. 
-        AIB for example does from one to 10 years of fixed mortgage. 
-    Therefore this only is a very ROUGH estimate.</p>
-
-    <p>Having an issue with the number dissapearing after i put it into the amount field.</p>
-    <p>We're going to have multiple fields, so we need to prefent that from happening.</p>
-    <p>When clicking on the input field - there is an option to go up or down - and it can go to minus. We need to prevent numbers going to minus</p>
+    <ol>
+        <li><h4>Biggest issue is that there is no way to accurately to calculate the cost of mortgage.</h4></li>
+        <li>The interst rate will never be the same throughout the entire duration of the mortgage. 
+            AIB for example does from one to 10 years of fixed mortgage. 
+        Therefore this only is a very ROUGH estimate.</li>
+        <li>Having an issue with the number dissapearing after i put it into the amount field.</li>
+        <li>We're going to have multiple fields, so we need to prefent that from happening.</li>
+        <li>When clicking on the input field - there is an option to go up or down - and it can go to minus. We need to prevent numbers going to minus</li>
+    </ol>
 </div>
 
 <div class="to-do-section">   
@@ -87,7 +87,7 @@
                 <li>
                     <a href="https://www.ccpc.ie/consumers/money/mortgages/mortgage-interest-rates/">Consumer protection info - may help</a>
                 </li>
-                <li>When finding a montly borrowing rate from yearly (e.g. 3.5% divid by 12 months) how many decimal points should I use if it is an issue?
+                <li>When finding a montly borrowing rate from yearly (e.g. 3.5% divid by 12 months) how many decimal points should I use if it is an issue? 
                     Or will we let it just calculate to infinity?
                 </li>
                 <li>Look at other calculators - so far no clear answer
@@ -110,74 +110,25 @@
                 </li>
             </ul>
             
-        <li>add a calculate button, cost of repayment and total cost</li>
+        <li>SIMPLE VERSION: add a calculate button, cost of repayment and total cost and try and fill all fields with that button</li>
+        <li>INTUITIVE VERSION: remove the calculate button and have all the calculations happen with the change of any value so all can adjust REALTIME!</li>
     </ol>
 </div>
 
 <div class="formula-section">
     <h2>BASIC AMORTISATION FORMULA</h2>
-    <h3> 
-        TOTAL PAYMENT = mortgage-amount *(r*(1+r)^n /((1+r)^300-1))
-    </h3>
     <i class="fa-regular fa-hand-point-right fa-beat-fade"></i> <a href="https://www.investopedia.com/terms/a/amortization.asp#toc-how-to-calculate-loan-amortization">*reference</a>
-    
-    <div class="formula-breakdown-attempt-1">
-        <h3>Monthly mortgage repayments calculations attempt 1</h3>
 
-        <ol>
-            <li>
-            (r) First we need to find a monthly interest rate. E.g. borrowing-rate of 3.5% / 12 months = 0.29167 (To be confirmed if this is applicable to Ireland)
-            </li>
-            
-            <li>
-            (a) Then we need to adjust the decimal of the monthly rate (r) by adding 1 to it. e.g. r(0.29167)+ 1= 1.29167.
-            </li>
-
-            <li>
-            (n) Now we need to find a total number of months in a term. E.g. 25 years / 12 months = 300 months means there is a total of 300 payments.
-            </li>
-
-            <li>
-            (p) Now we need to raise (a) to the power of (n). 1.29167 to the power of 300 is = (p)2.215500561072621e+33
-
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation">JS exponentiation operator</a>
-            </li>
-
-            <li>
-            (t) We will multiply (r) with (p) . 0.29167 * 2.215500561072621e+33 = 6.461950486480514e+32
-            </li>
-
-            <li>
-            (b) Now e will take p and minus a 1. eg. 2.215500561072621e+33which -1 = 2.215500561072621e+33
-            </li>
-
-            <li>
-            (m) Now let's divide (t) 6.461950486480514e+32 by (b) 2.215500561072621e+33 = 0.29167 
-            </li>
-
-            <li>
-                TOTAL PAYMENT = Now we need to mutiply (r) 0.29167 by (m) 0.29167 = 0.08507138889999999  (Chedck why r and m end up being the same value)
-            </li>
-
-            <li>
-                Total Payment is 300* 0.08507138889999999 (this not did not come out right - going to try after making a commit)
-            </li>
-
-
-        </ol>
-    </div>
-
-    <div class="formula-breakdown-attempt-2">
-        <h2>
-            Attemp no 2 at a formula 
+    <div class="formula-breakdown">
+        <h3>TOTAL PAYMENT = mortgage-amount *(r*(1+r)^n /((1+r)^300-1))</h3>
+        <h2> See chart
             <a href="https://lucid.app/lucidchart/b1ec92c6-70ae-4d79-8ecb-c9dd00f634eb/edit?viewport_loc=-161%2C-178%2C2571%2C1999%2C0_0&invitationId=inv_b2a873d0-b45a-4711-ab57-a27e581c763f">Formula breakdown</a>
         </h2>
-        <p>EXAMPLE: Mortgage amount 200K, Yearly rate is 4% and a term of 10 years.</p>
-
+        <p>EXAMPLE: Mortgage amount 200K, Yearly rate is 4% and a term of 10 years.(Canclucation can be found at the bottom of this HTML page in the script section)</p>
         <ol>
             <li><b>TP</b> Total monthly payouts calculation. Yearly term * 12.</li>
             <li><b>MI</b> Montly interest rate clculation. Yearly term / 100 / 12</li>
-            <li><b>P</b> To the power of calculation.  (1 + MR) ^ MT</li>
+            <li><b>P</b> To the power of calculation.  (1 + MR) ^ MT   ref. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation">JS exponentiation operator</a></li>
             <li><b>T</b> Top part of equasion calculation. MR * P</li>
             <li><b>B</b> Bottom part of the equasion calculation. P -1</li>
             <li><b>W</b> Whole: Calculating top and bottom parts of the equasion. T / B</li>
