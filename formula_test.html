@@ -47,14 +47,25 @@
 
     <hr>
     <script>
-        //attempt at a calculation function 
-        function Calculate {
-            // take term years and * by 12 and enter the amount into "term in months" field
-            //when should the function get called? when clicing calculate or when a mortgage term is picked? I will do later for now.
+        // this is for calculate button
+        function Calculate() {}
+
+        // attempting to calculate terms in in months
+        let yearlyTerm = document.getElementById("mortgage-term"); // creating a variable from HTML ID element
+        let monthlyTerm = document.getElementById("year-to-month-conversion"); 
+      
+        yearlyTerm.addEventListener("input",calculateTotalAmountOfTermPayments)  // using this variable so that JS can listen to when there is an input into term box and trigger a function . "input" ref found here:   // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event 
+        
+        function calculateTotalAmountOfTermPayments() {
+            // since yearlyTerm input is already an interger number, all I need to do is multiply by 12 and have function output the answer into monthlyTerm input
+            console.log(yearlyTerm.value);
+            monthlyTerm.value = 1; // it is not working .
+            /*totalTermsInMonths = yearlyTerm * 12;
+            monthlyTerm.value = totalTermsInMonths;*/
         }
     </script>
-    <label for="year--to-month-conversion">Term in months</label>
-    <input type="number" id="year--to-month-conversion" readonly>
+    <label for="year-to-month-conversion">Term in months</label>
+    <input type="number" id="year-to-month-conversion" readonly>
     
     <p>Monthly mortgage cost</p>
     <p>Total mortgage cost</p>
@@ -171,7 +182,13 @@
     </div>
 
     <div class="formula-breakdown-attempt-2">
-
+        <h2>
+            Attemp no 2 at a formula 
+            <a href="https://lucid.app/lucidchart/b1ec92c6-70ae-4d79-8ecb-c9dd00f634eb/edit?viewport_loc=-161%2C-178%2C2571%2C1999%2C0_0&invitationId=inv_b2a873d0-b45a-4711-ab57-a27e581c763f">Formula breakdown</a>
+        </h2>
+        <ol>
+            
+        </ol>
 
     </div>
 </div>
