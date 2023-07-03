@@ -11,62 +11,57 @@
 
 <!--calculator form-->
 
-    <h1>Mortage calculator for a first-time home buyer in Irelnd</h1>
-    <hr>
-    <form action="">
+<form>
+  <label for="mortgage-amount">Mortgage amount</label>
+  <span>€</span>
+  <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
+      a function will then change that same value in the ID linked element. -->
+  <input type="number" name="mortgage-amount" id="mortgage-amount" required onchange="updateMortggeSliderAmount(this.value)">
+  <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
+  <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
+  <br>
 
-        <label for="mortgage-amount">Mortgage amount</label>
-            <!-- <span style="position: absolute; margin-left: 1px; margin-top: 1px;">€</span>
-            code is attributed to Sebastian in 
-            https://stackoverflow.com/questions/2913236/html-text-input-field-with-currency-symbol-->
-        <span>€</span>
-        <input type="number" name="mortgage-amount" id="mortgage-amount" required>
-        
-        <label for="range"></label>
-        <!--Range is set to show from 0 to 1 million and it would sit at 500K at rest-->
-        <input type="range" name="range" id="range" min="0" max="1000000" value="500000">
+  <label for="borrowing-rate">Borrowing rate</label>
+  <span>%</span>
+  <input type="number" name="borrowing-rate" id="borrowing-rate" required onchange="updateBorrowingRateAmount(this.value)">
+  <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="4" onchange="updateRateSliderAmount(this.value)">
 
-            <br>
+  <br>
 
-        <label for="borrowing-rate">Borrowing rate</label>
-        <span>%</span>
-        <input type="number" name="borrowing-rate" id="borrowing-rate" required>
-
-            <br>
-
-        <label for="mortgage-term">Mortgage term</label>
-        <span>
-            <i class="fa-solid fa-calendar-days"></i>
-        </span>
-        <input type="number" name="mortgage-term" id="mortgage-term" required>
-        
-
-
-    </form>
-
-
-
-
-
+  <label for="mortgage-term">Mortgage term</label>
+  <span><i class="fa-solid fa-calendar-days"></i></span>
+  <input type="number" name="mortgage-term" id="mortgage-term"required onchange="updateMortgageTermAmunt(this.value)">
+  <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" onchange="updateTermSliderAmount(this.value)">
   
+  <br>
+  <br>
+
+  <input type="submit" value="Calculate" onclick="Calculate()">
+
+</form>
+<hr>
 <br>
-<br> 
-  <!--Test 3 slider-->
+<fieldset>
+  <label for="year-to-month-conversion">Term in months</label>
+  <input type="number" id="year-to-month-conversion" readonly>
+    <br>
+  <label for="">Total repayment cost</label>
+  <input type="number" readonly>
+    <br>
+    <label for="">Total mortgage cost</label>
+    <input type="number" readonly>
+</fieldset>
 
-  <form>
-    <label for="mortgage-amount">Mortgage Amount:</label>
-    <input type="number" name="mortgage-amount" id="mortgage-amount" required>
-    
-    <label for="numberSlider">Number:</label>
-    <input type="range" id="numberSlider" name="numberSlider" min="0" max="1000000" value="500000" onchange="updateNumber(this.value)">
-    <input type="number" id="numberValue" name="numberValue" value="500000">
-  </form>
-  
-  <script>
-    function updateNumber(value) {
-      document.getElementById("mortgage-amount").value = value;
-    }
-  </script>
+<p>Total repayment cost</p>
+<!-- <p>Annual inererest charged</p>
+      <p>Monthly mortgage cost</p>-->
+
+
+
+  <!-- <span style="position: absolute; margin-left: 1px; margin-top: 1px;">€</span>
+  code is attributed to Sebastian in 
+  https://stackoverflow.com/questions/2913236/html-text-input-field-with-currency-symbol-->
+
 
 <!--font awesome script-->
     <script src="https://kit.fontawesome.com/9e5468dc87.js" crossorigin="anonymous"></script>
