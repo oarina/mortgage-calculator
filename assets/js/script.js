@@ -65,17 +65,25 @@ the mortgage was in total and what was the montly payment.
 document.getElementById("mortgage-term").addEventListener("input", calculateLoanTerm);*/
 
 //Working click listener/function event that calles calculateLoanTerm - this funcion then calculates and gives a result
-document.getElementById("calculate-button").addEventListener("click", calculateLoanTerm()); 
+//document.getElementById("calculate-button").addEventListener("submit", calculateLoanTerm()); 
+/* the issue of form resetting to a resting number in the HTML when clicking on button, also when adding
+event.preventDefault(); - the calculation would not appear at all. 
+All this was fixed with targeting the form itself via the ID. Merrit to https://www.youtube.com/watch?v=5endsOnJ6R4
+
+*/
+
+document.getElementById("form").addEventListener("submit", calculateLoanTerm);
 
 function calculateLoanTerm(event) {
-   // event.preventDefault();
+   event.preventDefault(); 
+
    let loanTerm = document.getElementById("mortgage-term").value;
    console.log("loanTerm " + loanTerm);
 
    let totalPayouts = loanTerm * 12;
    console.log(totalPayouts);
-   document.getElementById("year-to-month-conversion").value = totalPayouts;
-
+   document.getElementById("year-to-month-conversion").value = totalPayouts; 
+ // can we add a result to term in months using ${userName}?
 }
 
 

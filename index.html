@@ -12,7 +12,7 @@
   <h1>First time home buyer mortgage calculator</h1>
 <!--calculator form-->
 
-<form>
+<form id="form">
   <label for="mortgage-amount">Mortgage amount</label>
   <span>€</span>
   <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
@@ -21,6 +21,7 @@
   <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
   <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
   <br>
+
 <!--Aded value="500000" to input in the mortgage amount as a presetting. The slider works in changing the number, but as soon as I click calculate - it
 resets to that setting. -->
 
@@ -33,13 +34,13 @@ resets to that setting. -->
 
   <label for="mortgage-term">Mortgage term</label>
   <span><i class="fa-solid fa-calendar-days"></i></span>
-  <input type="number" name="mortgage-term" id="mortgage-term"required  onchange="updateMortgageTermAmunt(this.value)">
-  <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="14" onchange="updateTermSliderAmount(this.value)">
+  <input type="number" name="mortgage-term" id="mortgage-term"required  value="14" onchange="updateMortgageTermAmunt(this.value)">
+  <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" onchange="updateTermSliderAmount(this.value)">
   <!--Removed value="15" from input to see how it would work-->
   <br>
   <br>
 
-  <input type="submit" value="Calculate" id="calculate-button">
+  <input type="submit" value="calculate" id="calculate-button" onclick="calculateLoanTerm()">
   <!--onclick="amortisationCalculation()>-->
 
 </form>
