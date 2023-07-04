@@ -1,23 +1,21 @@
  /* This function is called from the onchange element in HTML that needs to change and will
     fetch the value from the ID linked element and paste the change to the onclick*/ 
     function updateMortgageAmount(value) {document.getElementById("mortgage-amount").value = value;};
-    function updateMortggeSliderAmount(value) {document.getElementById("mortgage-slider").value = value;};
+    function updateMortgageSliderAmount(value) {document.getElementById("mortgage-slider").value = value;};
 
     function updateBorrowingRateAmount(value) {document.getElementById("rate-slider").value = value;};
     function updateRateSliderAmount(value){document.getElementById("borrowing-rate").value = value;};
 
     function updateMortgageTermAmunt(value) {document.getElementById("term-slider").value = value;};
     function updateTermSliderAmount(value){document.getElementById("mortgage-term").value = value;};
-
-    let mortgageAmount = 200000;
-    let yearlyRate = 4; 
-    let loanTerm = 10;
     
    /* Initial attempt / drft at calculation fucntions */
 
+/*
 let mortgageAmount = 200000;
 let yearlyRate = 4; 
 let loanTerm = 10;
+
  
 let totalPayouts = loanTerm * 12;
 console.log("1. TP " + totalPayouts); // gives 120 - correct
@@ -42,9 +40,39 @@ console.log("Monthly Repayment = " + Math.round(montlyRepayment)); // 1372 . I w
 // found a way to add a coma to the number in https://sabe.io/blog/javascript-format-numbers-commas?utm_content=cmp-true 
 console.log(montlyRepayment.toLocaleString("en-IE")); // 1,371.808  
 
-
+.
 
 /*
 this is the total payment on the mortgae  and from here we can find out how much 
 the mortgage was in total and what was the montly payment.
 */
+/*
+document.getElementById("mortgage-term").addEventListener("input", calculateLoanTerm);*/
+
+//Working click listener/function event that calles calculateLoanTerm - this funcion then calculates and gives a result
+document.getElementById("calculate-button").addEventListener("click", calculateLoanTerm());
+
+function calculateLoanTerm() {
+   let loanTerm = document.getElementById("mortgage-term").value;
+   console.log(loanTerm);
+
+   let totalPayouts = loanTerm * 12;
+   console.log(totalPayouts);
+   document.getElementById("year-to-month-conversion").value = totalPayouts;
+
+}
+
+
+/*
+function amortisationCalculation() {
+   // setting up the initial variables (amount, term years and yearly rate) we will need to falculate the formula
+   let mortgageAmount = document.getElementById("mortgage-amount").value;
+   console.log(mortgageAmount);
+
+   let yearlyRate = document.getElementById("borrowing-rate").value;
+   console.log(yearlyRate);
+
+   let loanTerm = document.getElementById("mortgage-term").value;
+   console.log(loanTerm);
+   
+} */

@@ -9,6 +9,7 @@
 
 <body>
 
+  <h1>First time home buyer mortgage calculator</h1>
 <!--calculator form-->
 
 <form>
@@ -16,29 +17,31 @@
   <span>€</span>
   <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
       a function will then change that same value in the ID linked element. -->
-  <input type="number" name="mortgage-amount" id="mortgage-amount" required onchange="updateMortggeSliderAmount(this.value)">
+  <input type="number" name="mortgage-amount" id="mortgage-amount" value="500000" required onchange="updateMortgageSliderAmount(this.value)">
   <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
   <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
   <br>
 
   <label for="borrowing-rate">Borrowing rate</label>
   <span>%</span>
-  <input type="number" name="borrowing-rate" id="borrowing-rate" required onchange="updateBorrowingRateAmount(this.value)">
+  <input type="number" name="borrowing-rate" id="borrowing-rate" value="4" required onchange="updateBorrowingRateAmount(this.value)">
   <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="4" onchange="updateRateSliderAmount(this.value)">
 
   <br>
 
   <label for="mortgage-term">Mortgage term</label>
   <span><i class="fa-solid fa-calendar-days"></i></span>
-  <input type="number" name="mortgage-term" id="mortgage-term"required onchange="updateMortgageTermAmunt(this.value)">
+  <input type="number" name="mortgage-term" id="mortgage-term"required value="15" onchange="updateMortgageTermAmunt(this.value)">
   <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" onchange="updateTermSliderAmount(this.value)">
   
   <br>
   <br>
 
-  <input type="submit" value="Calculate" onclick="Calculate()">
+  <input type="submit" value="Calculate" id="calculate-button">
+  <!--onclick="amortisationCalculation()>-->
 
 </form>
+
 <hr>
 <br>
 <fieldset>
@@ -52,9 +55,10 @@
     <input type="number" readonly>
 </fieldset>
 
-<p>Total repayment cost</p>
+
 <!-- <p>Annual inererest charged</p>
-      <p>Monthly mortgage cost</p>-->
+      <p>Monthly mortgage cost</p>
+    <p>Total repayment cost</p>-->
 
 
 
