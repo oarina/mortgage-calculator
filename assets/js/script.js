@@ -1,6 +1,10 @@
  /* This function is called from the onchange element in HTML that needs to change and will
     fetch the value from the ID linked element and paste the change to the onclick*/ 
-    function updateMortgageAmount(value) {document.getElementById("mortgage-amount").value = value;};
+    function updateMortgageAmount(value) {
+      document.getElementById("mortgage-amount").value = value; 
+      console.log("mortgage-amount" + value);
+   };
+
     function updateMortgageSliderAmount(value) {document.getElementById("mortgage-slider").value = value;};
 
     function updateBorrowingRateAmount(value) {document.getElementById("rate-slider").value = value;};
@@ -8,7 +12,18 @@
 
     function updateMortgageTermAmunt(value) {document.getElementById("term-slider").value = value;};
     function updateTermSliderAmount(value){document.getElementById("mortgage-term").value = value;};
+
+    /*the functions above worked, but the numbers were not pre-set in the inboxes and since I have a presetting even though slider changes it,
+    once I hit calculate - it resets to the 'preset' figure and calculation happens based on that
     
+    I think I would need to change the value in the inbox with the function and not only have it display the value externally only.
+    Console.log shows that the numbers are also  being logged into the system. so going to check the button code*/
+
+
+
+
+    
+
    /* Initial attempt / drft at calculation fucntions */
 
 /*
@@ -50,11 +65,12 @@ the mortgage was in total and what was the montly payment.
 document.getElementById("mortgage-term").addEventListener("input", calculateLoanTerm);*/
 
 //Working click listener/function event that calles calculateLoanTerm - this funcion then calculates and gives a result
-document.getElementById("calculate-button").addEventListener("click", calculateLoanTerm());
+document.getElementById("calculate-button").addEventListener("click", calculateLoanTerm()); 
 
-function calculateLoanTerm() {
+function calculateLoanTerm(event) {
+   // event.preventDefault();
    let loanTerm = document.getElementById("mortgage-term").value;
-   console.log(loanTerm);
+   console.log("loanTerm " + loanTerm);
 
    let totalPayouts = loanTerm * 12;
    console.log(totalPayouts);

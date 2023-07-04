@@ -21,19 +21,21 @@
   <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
   <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
   <br>
+<!--Aded value="500000" to input in the mortgage amount as a presetting. The slider works in changing the number, but as soon as I click calculate - it
+resets to that setting. -->
 
   <label for="borrowing-rate">Borrowing rate</label>
   <span>%</span>
   <input type="number" name="borrowing-rate" id="borrowing-rate" value="4" required onchange="updateBorrowingRateAmount(this.value)">
-  <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="4" onchange="updateRateSliderAmount(this.value)">
+  <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="5" onchange="updateRateSliderAmount(this.value)">
 
   <br>
 
   <label for="mortgage-term">Mortgage term</label>
   <span><i class="fa-solid fa-calendar-days"></i></span>
-  <input type="number" name="mortgage-term" id="mortgage-term"required value="15" onchange="updateMortgageTermAmunt(this.value)">
-  <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" onchange="updateTermSliderAmount(this.value)">
-  
+  <input type="number" name="mortgage-term" id="mortgage-term"required  onchange="updateMortgageTermAmunt(this.value)">
+  <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="14" onchange="updateTermSliderAmount(this.value)">
+  <!--Removed value="15" from input to see how it would work-->
   <br>
   <br>
 
@@ -71,5 +73,7 @@
     <script src="https://kit.fontawesome.com/9e5468dc87.js" crossorigin="anonymous"></script>
 
     <script src="assets/js/script.js"></script>
+
+    <!--https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LMR101+2021_T1/courseware/0a4bf408d10c4149bb686457ac11edf6/16d62f1111064f5cb6a64582da96a41b/-->
 </body>
 </html>
