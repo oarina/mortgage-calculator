@@ -1,0 +1,14 @@
+body {
+    background-color: rgba(0, 0, 0, 0.095);
+}
+
+input {
+    width: 250px;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

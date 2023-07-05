@@ -18,6 +18,7 @@
   <span>€</span>
   <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
       a function will then change that same value in the ID linked element. -->
+
   <input type="number" name="mortgage-amount" id="mortgage-amount" value="500000" required onchange="updateMortgageSliderAmount(this.value)">
   <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
   <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
@@ -52,7 +53,7 @@ resets to that setting. -->
   <label for="year-to-month-conversion">Term in months</label>
   <input type="number" id="year-to-month-conversion" readonly>
     <br>
-  <label for="monthly-repayment-cost">Monthly morgage</label>
+  <label for="monthly-repayment-cost">Monthly mortgage</label>
   <input type="text" id="monthly-repayment-cost" readonly>
     <br>
     <label for="total-repayment-cost">Total mortgage</label>

@@ -83,6 +83,12 @@ function calculateMortgage(event) {
    document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number 
 }
 
+/*
+ * Adds a comma to a number e.g. from 200000 to 200,000
+ */
+
+ 
+
 
 
 
