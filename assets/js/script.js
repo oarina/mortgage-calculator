@@ -29,7 +29,6 @@ the mortgage was in total and what was the montly payment.
 
 let form =document.getElementById("form");
 form.addEventListener("submit",calculateMortgage); 
-debugger
 // https://www.youtube.com/watch?v=5endsOnJ6R4 - suggested to use ID from the form element and listening to submit itself.
 
 function calculateMortgage(event) {
@@ -55,27 +54,33 @@ function calculateMortgage(event) {
    
    let p = (1 + montlyTermInterest) ** totalPayouts;
    console.log("3. P " + p); // 1.490832682418262
+   
    let t = p - 1;
    console.log("4. T " + t); //0.49083268241826206
+   
    let b = montlyTermInterest * p;
    console.log("5. B " + b); // 0.00496944227472754
+   
    let w = t / b;
    console.log("6. W " + w); // 98.77017485733305
+   
    let result = mortgageAmount * w; // Let's call it T - total
    console.log("7. Result " + result); // 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
+   
    let totalCost = result / totalPayouts; 
-   totalCost = Math.round(totalCost); 
+   totalCost = Math.round(totalCost); // rounding out the number
    console.log("8. Total mortgage Amount " + totalCost); // 164616.95809555508 so we can round out,
    console.log("8. Total mortgage Amount " + Math.round(totalCost)); // 164617
+   
    let totalCostPunctuating = totalCost.toLocaleString("en-IE");
    console.log(totalCostPunctuating)
-   document.getElementById("total-repayment-cost").value = totalCostPunctuating; // what prints number but need .toLocaleString("en-IE") still
+   document.getElementById("total-repayment-cost").value = totalCostPunctuating; // what prints number
 
    let montlyRepayment = totalCost / totalPayouts;
-   console.log("Monthly Repayment = " + Math.round(montlyRepayment)); 
+   montlyRepayment = Math.round(montlyRepayment); // if I don't add var = round.math(var) - it will not round
+   console.log("Monthly Repayment = " + montlyRepayment); 
    let montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
-   document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number but need .toLocaleString("en-IE") still
-
+   document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number 
 }
 
 
