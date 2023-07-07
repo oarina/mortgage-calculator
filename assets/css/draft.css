@@ -3,6 +3,8 @@
 body {
     background-color: rgba(12, 134, 228, 0.127);
 }
+
+
 /*----------------------------Form styling*/
 
 
@@ -27,14 +29,18 @@ input::-webkit-outer-spin-button {
 /* having some issues wiht the order of priority in CSS. tried using input and specifying
 the input type  but this seems to confuse it as I have 3 different declaratons
 
-going to try via ID */
+going to try via ID
+
+*/
 
 
 form {
+   
     background-color: rgba(28, 78, 187, 0.13);
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
     box-shadow: 10px 5px lightblue;
+   
 }
 
 @media screen and (min-width: 350px) {
@@ -46,7 +52,7 @@ form {
     form {
         width:720px
     }
-
+/*ALL BELOW WAS DELETED -----------------------------*/
     .styling-amount-container, 
     styling-rate-container, 
     styling-term-container {
@@ -66,30 +72,6 @@ form {
     border: 2px solid #4CAF50;
 }
 
-
-#mortgage-slider, #rate-slider, #term-slider {
-      margin: 30px 0px 30px 0px; /* Margin for top and bottom parts of the slider 
-      because I want to give a box shadow */
-    background-color: #1363d3;
-    width: 250px;
-}
-
-
-input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 5px 5px #1d3dcdab; /* Some of the code is taken and inspired by https://www.cssportal.com/style-input-range/ */
-    border: 5px solid #83a2e5db;
-    border-radius: 23px;
-    background: #4b4396;
-    -webkit-appearance: none;
-    color: blue; /* need to change the color of the thumb! */
-  }
-
-input[type=range]::-webkit-slider-runnable-track {
-    background-color: #1363d3dd;
-    border-radius: 12px;
-    box-shadow: 0px 1px 4px #1d3dcdab; /* lesser shadow than a thumb so that track
-    is not distracting from the thumb */ 
-}
 
 /*------------------styling inside the form */
 
@@ -116,3 +98,5 @@ form div label {
 form div div {
     background-color: rgba(128, 128, 128, 0.491);
 }
+
+

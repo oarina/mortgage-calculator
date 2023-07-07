@@ -4,7 +4,7 @@ body {
 /*----------------------------Form styling*/
 
 
-input[type=text], [type=number] {
+input[type=text], input[type=number] {
     width: 60px; /* let's shrink the width so that i can put the label and input in one line (make space) */
     background-color: rgba(247, 249, 255, 0.656);
     border-radius: 12px;
@@ -20,24 +20,21 @@ input::-webkit-outer-spin-button {
   youtube channel https://www.youtube.com/watch?v=v62zala_rlQ*/
 }
 
-
-
-/* having some issues wiht the order of priority in CSS. tried using input and specifying
-the input type  but this seems to confuse it as I have 3 different declaratons
-
-going to try via ID */
-
-
 form {
+    margin: 0 auto; /* this setting centers the form  */
     background-color: rgba(28, 78, 187, 0.13);
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
     box-shadow: 10px 5px lightblue;
 }
 
-@media screen and (min-width: 350px) {
+  /*-----------------------------MEDIA RULES*/
+
+
+  @media screen and (min-width: 350px) {
     form {
-        width: 320px;
+        width: 275px;
+    }
 }
 
 @media screen and (min-width: 750px) {
@@ -45,3 +42,41 @@ form {
         width:720px
     }
 }
+
+/*------------------------------------------------SLIDER STYLING */
+
+#mortgage-slider, #rate-slider, #term-slider {
+    margin: 30px 0px 30px 0px; /* Margin for top and bottom parts of the slider 
+    because I want to give a box shadow */
+  background-color: #1363d3;
+  width: 270px;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 5px 5px #1d3dcdab; /* Some of the code is taken and inspired by https://www.cssportal.com/style-input-range/ */
+  border: 5px solid #83a2e5db;
+  border-radius: 23px;
+  background: #4b4396;
+  -webkit-appearance: none;
+  color: blue; /* need to change the color of the thumb! */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #1363d3dd;
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px #1d3dcdab; /* lesser shadow than a thumb so that track
+  is not distracting from the thumb */ 
+
+  /*----------------------------------------------CALCULATE BUTTON STYLING*/
+
+  input[type=number] #calculate-button {
+    text-transform: uppercase;
+    width: 256px; 
+    background-color: rgba(0, 68, 255, 0.826);
+    border-radius: 12px;
+    height: 40px;
+    border: 2px solid #4CAF50;
+}
+
+
