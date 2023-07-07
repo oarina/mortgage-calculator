@@ -74,7 +74,6 @@ form {
       /* after applying the rule to the media somehow the centering 
       stopped working so applied it again here */
 
-
 }
 
 /*------------------------------------------------SLIDER STYLING */
@@ -125,6 +124,12 @@ input[type=range]::-webkit-slider-runnable-track {
     color: rgb(237, 243, 250);
     letter-spacing: 5px;
 
+  }
+
+  .styling-button-container {
+    display: flex;
+    justify-content: center; 
+    /* this puts the button in the centre */
   }
 
 
