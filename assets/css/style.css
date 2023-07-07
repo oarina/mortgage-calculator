@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Space+Grotesk:wght@500&display=swap');
+
 body {
     background-color: rgba(12, 134, 228, 0.127);
 }
@@ -5,11 +8,11 @@ body {
 
 
 input[type=text], input[type=number] {
-    width: 60px; /* let's shrink the width so that i can put the label and input in one line (make space) */
+    width: 80px; /* let's shrink the width so that i can put the label and input in one line (make space) */
     background-color: rgba(247, 249, 255, 0.656);
     border-radius: 12px;
-
-    border: #4b4396; /* this got rid of the black border*/
+    height: 25px;
+    box-shadow: 0px 5px 5px #1d3dcdab; 
 }
 
 input::-webkit-inner-spin-button,
@@ -21,24 +24,25 @@ input::-webkit-outer-spin-button {
 }
 
 form {
-    margin: 0 auto; /* this setting centers the form  */
+    margin: 0 auto; 
+    /* this setting centers the form  */
     background-color: rgba(28, 78, 187, 0.13);
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
-    box-shadow: 10px 5px lightblue;
+    box-shadow: 0px 5px 5px #1d3dcdab; 
 }
 
   /*-----------------------------MEDIA RULES*/
 
 
-  @media screen and (min-width: 350px) {
-    form {
+@media screen and (min-width: 350px) {
+    form, h1 {
         width: 275px;
     }
 }
 
 @media screen and (min-width: 750px) {
-    form {
+    form, h1 {
         width:720px
     }
 }
@@ -54,7 +58,11 @@ form {
 
 
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0px 5px 5px #1d3dcdab; /* Some of the code is taken and inspired by https://www.cssportal.com/style-input-range/ */
+  box-shadow: 0px 5px 5px #1d3dcdab; 
+
+  /* Some of the code is taken and inspired by 
+  https://www.cssportal.com/style-input-range/ */
+
   border: 5px solid #83a2e5db;
   border-radius: 23px;
   background: #4b4396;
@@ -65,18 +73,58 @@ input[type=range]::-webkit-slider-thumb {
 input[type=range]::-webkit-slider-runnable-track {
   background-color: #1363d3dd;
   border-radius: 12px;
-  box-shadow: 0px 1px 4px #1d3dcdab; /* lesser shadow than a thumb so that track
+  box-shadow: 0px 1px 4px #1d3dcdab;
+ /* lesser shadow than a thumb so that track
   is not distracting from the thumb */ 
+}
 
   /*----------------------------------------------CALCULATE BUTTON STYLING*/
 
-  input[type=number] #calculate-button {
+  #calculate-button {
     text-transform: uppercase;
     width: 256px; 
     background-color: rgba(0, 68, 255, 0.826);
     border-radius: 12px;
     height: 40px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #0a340b;
+    box-shadow: 0px 5px 5px #1d3dcdab; 
+  }
+
+
+/*------------------------------------------------STYLING H1*/
+
+ h1 {
+ 
+    margin: 40px auto; 
+    /* this setting centers the form,
+    also the 40px gives space between h1 and form  */
+    background-color: rgba(11, 53, 145, 0.806);
+    border-radius: 15px;
+    padding: 20px; /* gives form a padding */
+    box-shadow: 0px 5px 5px #1d3dcdab; 
+    /* Using the same style as the form */
+    text-align: center;
+
+    
 }
+
+/*-----------------------------------------------FONT STYLING */
+
+label {
+    text-transform: uppercase;
+    color: rgba(249, 253, 255, 0.243);
+    font-family: 'Kanit', sans-serif;
+    color: #1363d3;
+}
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    
+}
+
+
 
 
