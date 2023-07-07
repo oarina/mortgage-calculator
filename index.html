@@ -15,22 +15,24 @@
 
 <form id="form" method="POST" action="https://formdump.codeinstitute.net/">
     <div class="styling-amount-container">
-      <label for="mortgage-amount">Mortgage amount</label>
-        <div>
           <!--Just by wrapping span and inputs - that brought the symbols beside the inputs-->
-          <span>€</span>
-          <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
-              a function will then change that same value in the ID linked element. -->
-          <input type="number" name="mortgage-amount" id="mortgage-amount" value="500000" required onchange="updateMortgageSliderAmount(this.value)">
-          <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
-              <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
-          </div>
+      <div class="div1">
+            <label for="mortgage-amount">Mortgage amount</label>
+            <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
+            <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
+                a function will then change that same value in the ID linked element. -->
+            <input type="number" name="mortgage-amount" id="mortgage-amount" value="500000" required onchange="updateMortgageSliderAmount(this.value)">
+      </div>
+      <div class="div2">
+             <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
+              <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->    
+      </div>
     </div>
 
     <div class="styling-rate-container">
       <label for="borrowing-rate">Borrowing rate</label>
         <div>
-          <span>%</span>
+          <span><i class="fa-solid fa-percent"></i></span>
           <input type="number" name="borrowing-rate" id="borrowing-rate" value="4" required onchange="updateBorrowingRateAmount(this.value)">
           <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="5" onchange="updateRateSliderAmount(this.value)">
         </div>
