@@ -11,8 +11,12 @@ input[type=text], input[type=number] {
     width: 80px; /* let's shrink the width so that i can put the label and input in one line (make space) */
     background-color: rgba(247, 249, 255, 0.656);
     border-radius: 12px;
+   
     height: 25px;
     box-shadow: 0px 5px 5px #1d3dcdab; 
+
+    border: none;
+    /*removes sharpmness from the edges, but the shadows are still there */
 }
 
 input::-webkit-inner-spin-button,
@@ -81,13 +85,18 @@ input[type=range]::-webkit-slider-runnable-track {
   /*----------------------------------------------CALCULATE BUTTON STYLING*/
 
   #calculate-button {
+
     text-transform: uppercase;
-    width: 256px; 
+    width: 267px; 
     background-color: rgba(0, 68, 255, 0.826);
     border-radius: 12px;
     height: 40px;
-    border: 2px solid #0a340b;
     box-shadow: 0px 5px 5px #1d3dcdab; 
+
+    border: none;
+    color: rgb(237, 243, 250);
+    letter-spacing: 5px;
+
   }
 
 
@@ -114,15 +123,37 @@ label {
     text-transform: uppercase;
     color: rgba(249, 253, 255, 0.243);
     font-family: 'Kanit', sans-serif;
-    color: #1363d3;
+    color: #032350;
 }
+
+form #calculate-button {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: large;
+    text-shadow: 0px 5px 10px #07144eab
+    
+}
+
 
 h1 {
     font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
     letter-spacing: 5px;
+    color: rgb(237, 243, 250);
+}
 
-    
+
+/*------------------------------------------------NUMBERS AND ICON STYLE*/
+
+input[type=number], i {
+   color:  #1363d3;
+   text-shadow: 0px 0px 1px #1d3dcdab; 
+   font-size: large;
+
+   padding-left: 10px;
+   padding-right: 10px;
+   /* targeting both icons with i and number inputs so that there's a bit of give
+   and number and symbols are not too flush to the input*/
+  
 }
 
 
