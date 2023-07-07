@@ -34,6 +34,8 @@ form {
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
     box-shadow: 0px 5px 5px #1d3dcdab; 
+
+    align-items: baseline; /* centers the slider input and the logo */
 }
 
   /*-----------------------------MEDIA RULES*/
@@ -43,12 +45,36 @@ form {
     form, h1 {
         width: 275px;
     }
+
+  .styling-amount-container, .styling-rate-container, .form styling-term-container {
+        flex-direction: column;
+       
+    }
+
+    form span i {
+        flex-shrink;: 1
+    }
+     
 }
 
 @media screen and (min-width: 750px) {
     form, h1 {
         width:720px
     }
+
+    .styling-amount-container,
+    .styling-rate-container,
+    .styling-term-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+      /* after applying the rule to the media somehow the centering 
+      stopped working so applied it again here */
+
+
 }
 
 /*------------------------------------------------SLIDER STYLING */
@@ -56,8 +82,10 @@ form {
 #mortgage-slider, #rate-slider, #term-slider {
     margin: 30px 0px 30px 0px; /* Margin for top and bottom parts of the slider 
     because I want to give a box shadow */
-  background-color: #1363d3;
-  width: 270px;
+    background-color: #1363d3;
+    width: 270px;
+
+    vertical-align: middle;
 }
 
 
@@ -153,7 +181,18 @@ input[type=number], i {
    padding-right: 10px;
    /* targeting both icons with i and number inputs so that there's a bit of give
    and number and symbols are not too flush to the input*/
-  
+
+   display: inline;
+   /* 
+   vertical-align: middle;
+   this ligns the input and slideer and icons so that they are vertically in the middle and 
+   inline with each other */
+}
+   /*--------------------FIXING THE BREAKPOINTS FOR THE FORM ITEMS*/
+
+    form .styling-amount-container, styling-rate-container, styling-term-container {
+    padding: 10px;
+    display: flex;
 }
 
 
