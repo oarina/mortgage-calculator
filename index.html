@@ -14,36 +14,40 @@
 <!--calculator form-->
 
 <form id="form" method="POST" action="https://formdump.codeinstitute.net/">
-  <label for="mortgage-amount">Mortgage amount</label>
-  <span>€</span>
-  <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
-      a function will then change that same value in the ID linked element. -->
+    <div class="styling-amount-container">
+      <label for="mortgage-amount">Mortgage amount</label>
+        <div>
+          <!--Just by wrapping span and inputs - that brought the symbols beside the inputs-->
+          <span>€</span>
+          <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
+              a function will then change that same value in the ID linked element. -->
+          <input type="number" name="mortgage-amount" id="mortgage-amount" value="500000" required onchange="updateMortgageSliderAmount(this.value)">
+          <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
+              <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
+          </div>
+    </div>
 
-  <input type="number" name="mortgage-amount" id="mortgage-amount" value="500000" required onchange="updateMortgageSliderAmount(this.value)">
-  <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
-  <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->
-  <br>
+    <div class="styling-rate-container">
+      <label for="borrowing-rate">Borrowing rate</label>
+        <div>
+          <span>%</span>
+          <input type="number" name="borrowing-rate" id="borrowing-rate" value="4" required onchange="updateBorrowingRateAmount(this.value)">
+          <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="5" onchange="updateRateSliderAmount(this.value)">
+        </div>
+    </div>
+    
+    <div class="styling-term-container">
+      <label for="mortgage-term">Mortgage term</label>
+        <div>
+          <span><i class="fa-solid fa-calendar-days"></i></span>
+          <input type="number" name="mortgage-term" id="mortgage-term"required  value="15" onchange="updateMortgageTermAmunt(this.value)">
+          <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" onchange="updateTermSliderAmount(this.value)">
+        </div>
+    </div>
 
-<!--Aded value="500000" to input in the mortgage amount as a presetting. The slider works in changing the number, but as soon as I click calculate - it
-resets to that setting. -->
-
-  <label for="borrowing-rate">Borrowing rate</label>
-  <span>%</span>
-  <input type="number" name="borrowing-rate" id="borrowing-rate" value="4" required onchange="updateBorrowingRateAmount(this.value)">
-  <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="5" onchange="updateRateSliderAmount(this.value)">
-
-  <br>
-
-  <label for="mortgage-term">Mortgage term</label>
-  <span><i class="fa-solid fa-calendar-days"></i></span>
-  <input type="number" name="mortgage-term" id="mortgage-term"required  value="15" onchange="updateMortgageTermAmunt(this.value)">
-  <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" onchange="updateTermSliderAmount(this.value)">
-  <!--Removed value="15" from input to see how it would work-->
-  <br>
-  <br>
-
-  <input type="submit" value="calculate" id="calculate-button">
-
+    <div class="styling-button-container">
+      <input type="submit" value="calculate" id="calculate-button">
+    </div>
 </form>
 
 <hr>

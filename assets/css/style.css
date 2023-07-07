@@ -1,20 +1,25 @@
 body {
     background-color: rgba(12, 134, 228, 0.127);
 }
+/*----------------------------Form styling*/
+
 
 input[type=text], [type=number] {
     width: 250px; 
     background-color: rgba(247, 249, 255, 0.656);
     height: 30px;
     border-radius: 12px;
+    border: #4b4396; /* this got rid of the black border*/
 }
 
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+  /* attributing the solution to the above 
+  youtube channel https://www.youtube.com/watch?v=v62zala_rlQ*/
 }
-/* attributing the solution to the above youtube channel https://www.youtube.com/watch?v=v62zala_rlQ*/
+
 
 
 /* having some issues wiht the order of priority in CSS. tried using input and specifying
@@ -24,7 +29,7 @@ going to try via ID */
 
 
 form {
-    width: 350px;
+    width: 320px;
     /* want the width be perfect for the smallest phone screen. */
     padding: 15px ;
     background-color: rgba(28, 78, 187, 0.13);
@@ -33,7 +38,17 @@ form {
     box-shadow: 10px 5px lightblue;
 }
 
+@media screen and (min-width: 350px) {
+ form {
+    width: 700px;
+ }   
+}
+    
+}
+
 #calculate-button {
+    text-transform: uppercase;
+    width: 256px; 
     background-color: rgba(0, 68, 255, 0.826);
     border-radius: 12px;
     height: 40px;
@@ -63,6 +78,27 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 12px;
     box-shadow: 0px 1px 4px #1d3dcdab; /* lesser shadow than a thumb so that track
     is not distracting from the thumb */ 
-
-
 }
+
+/*------------------styling inside the form */
+
+form div {
+    text-align: center;
+} 
+
+form div label {
+    padding: 15px; /* padding splills onto  inbox */
+    background-color: grey;
+    color:blue ;
+    width: 350px !important;
+    text-transform: uppercase;
+    text-align: justify
+}
+
+/*
+originally classed div's in the form, but form div worked just as well
+.styling-amount-container, styling-rate-container, styling-term-container, styling-button-container {
+  text-align: center;
+}
+*/
+
