@@ -41,27 +41,29 @@ form {
   /*-----------------------------MEDIA RULES*/
 
 
-@media screen and (min-width: 350px) {
-    form, h1 {
+  @media screen and (min-width: 350px) {
+    form,
+    h1 {
         width: 275px;
     }
 
-  .styling-amount-container, .styling-rate-container, .form styling-term-container {
+    .styling-amount-container,
+    .styling-rate-container,
+    .styling-term-container {
         flex-direction: column;
-       
     }
 
     form span i {
-        flex-shrink;: 1
+        flex-shrink: 1;
     }
-     
 }
 
 @media screen and (min-width: 750px) {
-    form, h1 {
-        width:720px
+    form,
+    h1 {
+      width: 720px;
     }
-
+  
     .styling-amount-container,
     .styling-rate-container,
     .styling-term-container {
@@ -71,6 +73,14 @@ form {
       justify-content: space-between;
     }
   
+    #mortgage-slider,
+    #rate-slider,
+    #term-slider {
+      width: 100% !important;
+      max-width: 150px !important;
+    }
+  }
+  
       /* after applying the rule to the media somehow the centering 
       stopped working so applied it again here */
 
@@ -78,13 +88,17 @@ form {
 
 /*------------------------------------------------SLIDER STYLING */
 
-#mortgage-slider, #rate-slider, #term-slider {
-    margin: 30px 0px 30px 0px; /* Margin for top and bottom parts of the slider 
+#mortgage-slider,
+#rate-slider,
+#term-slider {
+     /* Margin for top and bottom parts of the slider 
     because I want to give a box shadow */
+    margin: 30px 0px;
     background-color: #1363d3;
-    width: 270px;
+    width: 100% !important;
+    max-width: 270px !important;
+     /* after tidying up sliders are all of a sudden less than 270px - trying to fix that */
 
-    vertical-align: middle;
 }
 
 
@@ -129,6 +143,8 @@ input[type=range]::-webkit-slider-runnable-track {
   .styling-button-container {
     display: flex;
     justify-content: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
     /* this puts the button in the centre */
   }
 
@@ -136,7 +152,6 @@ input[type=range]::-webkit-slider-runnable-track {
 /*------------------------------------------------STYLING H1*/
 
  h1 {
- 
     margin: 40px auto; 
     /* this setting centers the form,
     also the 40px gives space between h1 and form  */
@@ -157,6 +172,7 @@ label {
     color: rgba(249, 253, 255, 0.243);
     font-family: 'Kanit', sans-serif;
     color: #032350;
+    font-weight: 500;
 }
 
 form #calculate-button {
@@ -188,17 +204,29 @@ input[type=number], i {
    and number and symbols are not too flush to the input*/
 
    display: inline;
+}
    /* 
    vertical-align: middle;
    this ligns the input and slideer and icons so that they are vertically in the middle and 
    inline with each other */
-}
+
    /*--------------------FIXING THE BREAKPOINTS FOR THE FORM ITEMS*/
 
-    form .styling-amount-container, styling-rate-container, styling-term-container {
+   .styling-amount-container,
+   .styling-rate-container,
+   .styling-term-container {
     padding: 10px;
     display: flex;
-}
+   }
+
+   div.styling-rate-container input[type="range"],
+   div.styling-term-container input[type="range"],
+   div.styling-amount-container input[type="range"] {
+    width: 100%;
+    max-width: 270px;
+   }
+
+   /* after tidying up sliders are all of a sudden less than 270px - trying to fix that */
 
 
 
