@@ -39,9 +39,9 @@ form  {
     padding: 20px; /* gives form a padding */
     box-shadow: 0px 5px 5px #1d3dcdab; 
 
-    align-items: baseline; /* centers the slider input and the logo */
+    align-items: baseline; 
+    /* centers the slider input and the logo */
 }
-
 
 #currency-input-container {
     /* this centers the display and currecy together
@@ -55,7 +55,6 @@ form  {
 }
 
   /*----------------------------------------------MEDIA RULES*/
-
 
   @media screen and (min-width: 350px) {
     form,
@@ -112,8 +111,6 @@ form  {
       /* targeting sliders with a class above helped with the issue*/
   }
   
-
-
 /*------------------------------------------------SLIDER STYLING */
 
 #mortgage-slider,
@@ -131,29 +128,35 @@ form  {
 
 
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0px 5px 5px #1d3dcdab; 
+  box-shadow: 2px 5px 7px #1d3dcdab; 
 
   /* Some of the code is taken and inspired by 
   https://www.cssportal.com/style-input-range/ */
 
-  border: 5px solid #83a2e5db;
+  border: 7px solid #83a2e5db;
   border-radius: 23px;
   background: #4b4396;
   -webkit-appearance: none;
+
   color: blue; /* need to change the color of the thumb! */
 }
 
 
 input[type=range]::-webkit-slider-runnable-track {
-background-color: #1363d3dd;
-  border-style: hidden;  
-  border-radius: 12px;
-  box-shadow: 0px 1px 4px #1d3dcdab;  
-  margin: 3px;
-  padding: 5px;
+
+  
+  border-radius: 12px; 
+  /* rounds out the borders  around the slider*/
+
+  margin: 1px;
+  padding: 1px;
+
+    /*box-shadow: 0px 1px 4px #1d3dcdaf; 
+  background-color: #1363d34b; 
+  avoe settings are a little bit too much and are distracting 
+  from the number input box, calculate button and h1 */
 }
 
-  /* lesser shadow than a thumb so that track is not distracting from the thumb */ 
 
 
 
