@@ -206,7 +206,15 @@ label {
     color:  #1363d3;
     text-shadow: 0px 0px 1px #030b2cab; 
     font-size: large;
-    font-family: 'Space Grotesk', sans-serif !important;
+    /*font-family: 'Space Grotesk', sans-serif !important;
+
+    FONT DESICION LOGIC:
+    was my original idea for the font I was worried it may be hard to see, 
+    but after seeing couple of UX inspired desinges aka https://dribbble.com/shots/9933822-Mortgage-Calculator 
+    decided to revert back to a more gentlefont, so that it does not distract from the numbers, h1 and the button
+    */
+
+    font-family: 'Kanit', sans-serif;
 
 }
 
