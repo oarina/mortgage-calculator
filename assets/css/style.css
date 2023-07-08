@@ -13,7 +13,7 @@ input[type=number] {
     background-color: rgba(247, 249, 255, 0.656);
     border-radius: 12px;
    
-    height: 25px;
+    height: 25px; /* making input box a reasonably good size */
     box-shadow: 0px 5px 5px #1d3dcdab; 
     margin: 5px;
 
@@ -48,10 +48,10 @@ form  {
     a bit more in line with the result container result boxes */
     display: flex;
     justify-content: center; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
   /*----------------------------------------------MEDIA RULES*/
@@ -60,7 +60,8 @@ form  {
   @media screen and (min-width: 350px) {
     form,
     h1,
-    #styling-result-container {
+    #styling-result-container,
+    #results-history-container {
         width: 275px;
     }
 
@@ -81,14 +82,16 @@ form  {
 @media screen and (min-width: 750px) {
     form,
     h1,
-    #styling-result-container{
+    #styling-result-container,
+    #results-history-container {
       width: 720px;
     }
   
     .styling-amount-container,
     .styling-rate-container,
     .styling-term-container,
-    #styling-result-container {
+    #styling-result-container,
+    #results-history-container {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -118,7 +121,7 @@ form  {
 #term-slider {
      /* Margin for top and bottom parts of the slider 
     because I want to give a box shadow */
-    margin: 30px 0px;
+    margin: 5px 0px;
     background-color: #1363d3;
     width: 100% !important;
     max-width: 270px !important;
@@ -228,7 +231,7 @@ form .label-container {
 
     padding: 3px;
     border: none;
-    padding: 10px;
+    padding: 3px;
  }
 
 
@@ -265,7 +268,7 @@ i {
    .styling-amount-container,
    .styling-rate-container,
    .styling-term-container {
-    padding: 10px;
+    padding: 5px;
     display: flex;
    }
 
@@ -298,8 +301,8 @@ i {
 #result-currency-container {
     display: flex;
     justify-content: center; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     align-items: center;
     margin-right: 10px; /* result container is too flush to the next label
     so adding margin for the right specifically */
@@ -308,8 +311,22 @@ i {
 .label-container {
     display: flex;
     justify-content: center; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*----------------------------------------------PUBLISHED CALCULATOR HISTORY STYLING (POSSIBLE SECTION)*/
+
+#results-history-container {
+    margin: 40px auto; 
+    /* this setting centers the form,
+    but also leaves space between boxes */
+    background-color: rgba(28, 78, 187, 0.13);
+    border-radius: 15px;
+    padding: 20px; /* gives form a padding */
+    box-shadow: 0px 5px 5px #1d3dcdab; 
+
+    align-items: baseline; /* centers the slider input and the logo */
 }
 
 
