@@ -20,7 +20,7 @@
               <label for="mortgage-amount">Mortgage amount</label>
         </div>
 
-        <div>
+        <div id="currency-input-container">
           <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
           <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
               a function will then change that same value in the ID linked element. -->
@@ -38,7 +38,7 @@
           <label for="borrowing-rate">Borrowing rate </label>
         </div>
       
-          <div>
+          <div id="currency-input-container">
             <span><i class="fa-solid fa-percent"></i></span>
             <input type="number" name="borrowing-rate" id="borrowing-rate" value="4" required onchange="updateBorrowingRateAmount(this.value)">
             
@@ -54,7 +54,7 @@
           <label for="mortgage-term">Mortgage term  </label>
         </div>
        
-          <div>
+          <div id="currency-input-container">
             <span><i class="fa-solid fa-calendar-days"></i></span>
             <input type="number" name="mortgage-term" id="mortgage-term"required  value="15" onchange="updateMortgageTermAmunt(this.value)">
           </div>
@@ -69,18 +69,37 @@
       </div>
   </form>
 
-  <hr>
-  <br>
-  <fieldset>
-    <label for="year-to-month-conversion">Term in months</label>
-    <input type="number" id="year-to-month-conversion" readonly>
-      <br>
-    <label for="monthly-repayment-cost">Monthly mortgage</label>
-    <input type="text" id="monthly-repayment-cost" readonly>
-      <br>
-      <label for="total-repayment-cost">Total mortgage</label>
+ 
+ <div id="styling-result-container">
+    <div class="label-container">
+      <label for="year-to-month-conversion">Total payouts</label>
+    </div>
+      
+    <div id="result-currency-container">
+      <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
+      <input type="number" id="year-to-month-conversion" readonly>
+    </div>
+
+    <div class="label-container">
+      <label for="monthly-repayment-cost">Monthly cost</label>
+    </div>
+
+    <div id="result-currency-container">
+      <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
+      <input type="text" id="monthly-repayment-cost" readonly>
+    </div>
+
+    <div class="label-container"> 
+      <label for="total-repayment-cost">Total cost</label>
+    </div>
+
+    <div id="result-currency-container">
+      <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
       <input type="text" id="total-repayment-cost" readonly>
-  </fieldset>
+    </div>
+   
+  </div>
+
 
   <h2>May input results?</h2>
 </main>

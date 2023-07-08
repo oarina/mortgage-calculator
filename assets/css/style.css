@@ -7,7 +7,8 @@ body {
 /*-------------------------------------------------Form styling*/
 
 
-input[type=text], input[type=number] {
+input[type=text], 
+input[type=number] {
     width: 80px; /* let's shrink the width so that i can put the label and input in one line (make space) */
     background-color: rgba(247, 249, 255, 0.656);
     border-radius: 12px;
@@ -17,7 +18,7 @@ input[type=text], input[type=number] {
     margin: 5px;
 
     border: none;
-    /*removes sharpmness from the edges, but the shadows are still there *
+    /*removes sharpmness from the edges, but the shadows are still there */
     
 }
 
@@ -29,9 +30,10 @@ input::-webkit-outer-spin-button {
   youtube channel https://www.youtube.com/watch?v=v62zala_rlQ*/
 }
 
-form {
-    margin: 0 auto; 
-    /* this setting centers the form  */
+form  {
+    margin: 40px auto; 
+    /* this setting centers the form,
+    but also leaves space between boxes */
     background-color: rgba(28, 78, 187, 0.13);
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
@@ -40,14 +42,30 @@ form {
     align-items: baseline; /* centers the slider input and the logo */
 }
 
+
+#currency-input-container {
+    /* this centers the display and currecy together
+    a bit more in line with the result container result boxes */
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    margin-right: 10px;
+}
+
   /*----------------------------------------------MEDIA RULES*/
 
 
   @media screen and (min-width: 350px) {
     form,
-    h1 {
+    h1,
+    #styling-result-container {
         width: 275px;
     }
+
+    /* only adding the result container to the existing rule - which worked, 
+    however now need*/
 
     .styling-amount-container,
     .styling-rate-container,
@@ -62,13 +80,15 @@ form {
 
 @media screen and (min-width: 750px) {
     form,
-    h1 {
+    h1,
+    #styling-result-container{
       width: 720px;
     }
   
     .styling-amount-container,
     .styling-rate-container,
-    .styling-term-container {
+    .styling-term-container,
+    #styling-result-container {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -90,7 +110,6 @@ form {
   }
   
 
-}
 
 /*------------------------------------------------SLIDER STYLING */
 
@@ -140,7 +159,7 @@ background-color: #1363d3dd;
   #calculate-button {
 
     text-transform: uppercase;
-    width: 267px; 
+    width: 226px; 
     background-color: rgba(0, 68, 255, 0.826);
     border-radius: 12px;
     height: 40px;
@@ -215,7 +234,9 @@ form .label-container {
 
 /*------------------------------------------------NUMBERS AND ICON STYLE*/
 
-input[type=number], i {
+input[type=number],
+input[type=text],
+i {
    color:  #1363d3;
    text-shadow: 0px 0px 1px #1d3dcdab; 
    font-size: large;
@@ -257,7 +278,44 @@ input[type=number], i {
 
    /* after tidying up sliders are all of a sudden less than 270px - trying to fix that */
 
+   /*---------------------------------------------RESULT CONTAINER STYLING */
 
+  
+   #styling-result-container {
+
+    margin: 40px auto; 
+    /* this setting centers the form,
+    but also leaves space between boxes */
+    background-color: rgba(28, 78, 187, 0.13);
+    border-radius: 15px;
+    padding: 20px; /* gives form a padding */
+    box-shadow: 0px 5px 5px #1d3dcdab; 
+
+    align-items: baseline; /* centers the slider input and the logo */
+ 
+}
+
+#result-currency-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    margin-right: 10px; /* result container is too flush to the next label
+    so adding margin for the right specifically */
+}
+
+.label-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+   
+
+   
 
 
 
