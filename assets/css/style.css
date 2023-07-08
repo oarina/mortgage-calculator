@@ -207,12 +207,10 @@ label {
     text-shadow: 0px 0px 1px #030b2cab; 
     font-size: large;
     font-family: 'Space Grotesk', sans-serif !important;
-    
-    
 
 }
 
-form #calculate-button {
+form #calculate-button  {
     font-family: 'Space Grotesk', sans-serif !important;
     font-size: large;
     text-shadow: 0px 5px 10px #07144eab
@@ -232,6 +230,14 @@ form .label-container {
     padding: 3px;
     border: none;
     padding: 3px;
+ }
+
+ #results-history-container {
+    text-transform: uppercase;
+    color:  #1363d3;
+    text-shadow: 0px 0px 1px #030b2cab; 
+    font-family: 'Space Grotesk', sans-serif !important;
+    text-align: center;
  }
 
 
