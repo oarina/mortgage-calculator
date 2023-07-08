@@ -24,7 +24,24 @@
           <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
           <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
               a function will then change that same value in the ID linked element. -->
-          <input type="number" name="mortgage-amount" id="mortgage-amount" value="500000" required onchange="updateMortgageSliderAmount(this.value)">
+          <input type="text" name="mortgage-amount" id="mortgage-amount" value="500000"
+
+          pattern="[0-9]{5,7}" title="Please enter a valid number between 25000 and 9999999"
+          
+          onchange="updateMortgageSliderAmount(this.value)">
+
+           <!--for the moment using pattern="[0-9]" need 5 digits and minimum is 25 000 (5 numbers)
+          had to change the input type to TEXT as pattern does not work with a number
+          minlength="5" maxlength="7" - gives a message "please match the format required - this is not very clear
+          reference; https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefpattern 
+          2nd ref: https://www.w3schools.com/tags/att_input_pattern.asp 
+          3rd ref; https://stackoverflow.com/questions/47769289/html-pattern-to-only-accept-numbers 
+          4th reference: https://cheatography.com/davechild/cheat-sheets/regular-expressions/ 
+          5th referene: https://www.youtube.com/watch?v=7y4f0Fx7XzY 
+
+          could aslo add that: min="25000" max="9999999"
+
+        --> 
         </div>
 
         <div class="slider-container">
@@ -35,28 +52,42 @@
 
       <div class="styling-rate-container">
         <div class="label-container">
-          <label for="borrowing-rate">Borrowing rate </label>
+          <label for="borrowing-rate">Borrowing rate</label>
         </div>
       
           <div id="currency-input-container">
             <span><i class="fa-solid fa-percent"></i></span>
-            <input type="number" name="borrowing-rate" id="borrowing-rate" value="4" required onchange="updateBorrowingRateAmount(this.value)">
-            
+            <input type="text" name="borrowing-rate" id="borrowing-rate" value="4"
+
+            pattern="^(0|[1-9]|1[0-9]|20)$" title="Please enter a valid number between 0 and 20"
+
+            required onchange="updateBorrowingRateAmount(this.value)">
+
+            <!-- min="0" max="20" -->
           </div>
 
+          
           <div class="slider-container">
-            <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="5" onchange="updateRateSliderAmount(this.value)">
+            <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="4" onchange="updateRateSliderAmount(this.value)">
           </div>
       </div>
       
       <div class="styling-term-container">
         <div class="label-container">
-          <label for="mortgage-term">Mortgage term  </label>
+          <label for="mortgage-term">Mortgage term</label>
         </div>
        
           <div id="currency-input-container">
             <span><i class="fa-solid fa-calendar-days"></i></span>
-            <input type="number" name="mortgage-term" id="mortgage-term"required  value="15" onchange="updateMortgageTermAmunt(this.value)">
+            <input type="text" name="mortgage-term" id="mortgage-term"required  min="5"  max="35" value="15" 
+
+            pattern="^5[5-9]|1[0-9]35$" title="Please enter a valid number between 5 and 35"
+
+            <!--pattern="^5[5-9]|1[0-9]35$"
+              "[0-9]{1,2}"
+            -->
+
+            onchange="updateMortgageTermAmunt(this.value)">
           </div>
 
           <div class="slider-container">

@@ -258,7 +258,7 @@ input[type=number],
 input[type=text],
 i {
    color:  #1363d3;
-   text-shadow: 0px 0px 1px #1d3dcdab; 
+  /* text-shadow: 0px 0px 1px #1d3dcdab; */
    font-size: large;
 
    padding-left: 10px;
