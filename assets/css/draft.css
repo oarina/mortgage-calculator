@@ -14,6 +14,8 @@ input[type=text], [type=number] {
     border-radius: 12px;
 
     border: #4b4396; /* this got rid of the black border*/
+    padding: 5px;
+    margin: 5px;
 }
 
 input::-webkit-inner-spin-button,
@@ -40,6 +42,7 @@ form {
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
     box-shadow: 10px 5px lightblue;
+    margin: 5px;
    
 }
 
@@ -70,6 +73,8 @@ form {
     border-radius: 12px;
     height: 40px;
     border: 2px solid #4CAF50;
+    margin: 5px;
+    padding: 5px;
 }
 
 
@@ -78,6 +83,7 @@ form {
 
 .styling-amount-container, styling-rate-container, styling-term-container {
     padding: 5px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
 }
@@ -93,6 +99,10 @@ form div label {
     width: 230px;
     text-transform: uppercase;
     text-align: center
+}
+
+form .label-container {
+   background-color: grey;
 }
 
 form div div {

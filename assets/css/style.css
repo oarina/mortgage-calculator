@@ -4,7 +4,7 @@
 body {
     background-color: rgba(12, 134, 228, 0.127);
 }
-/*----------------------------Form styling*/
+/*-------------------------------------------------Form styling*/
 
 
 input[type=text], input[type=number] {
@@ -14,9 +14,11 @@ input[type=text], input[type=number] {
    
     height: 25px;
     box-shadow: 0px 5px 5px #1d3dcdab; 
+    margin: 5px;
 
     border: none;
-    /*removes sharpmness from the edges, but the shadows are still there */
+    /*removes sharpmness from the edges, but the shadows are still there *
+    
 }
 
 input::-webkit-inner-spin-button,
@@ -38,7 +40,7 @@ form {
     align-items: baseline; /* centers the slider input and the logo */
 }
 
-  /*-----------------------------MEDIA RULES*/
+  /*----------------------------------------------MEDIA RULES*/
 
 
   @media screen and (min-width: 350px) {
@@ -76,13 +78,17 @@ form {
     #mortgage-slider,
     #rate-slider,
     #term-slider {
-      width: 100% !important;
-      max-width: 150px !important;
+      width: 100% ;
+      max-width: 270px;
     }
+
+    .slider-container {
+        width: 100%;
+        max-width: 270px;
+      }
+      /* targeting sliders with a class above helped with the issue*/
   }
   
-      /* after applying the rule to the media somehow the centering 
-      stopped working so applied it again here */
 
 }
 
@@ -115,13 +121,19 @@ input[type=range]::-webkit-slider-thumb {
   color: blue; /* need to change the color of the thumb! */
 }
 
+
 input[type=range]::-webkit-slider-runnable-track {
-  background-color: #1363d3dd;
+background-color: #1363d3dd;
+  border-style: hidden;  
   border-radius: 12px;
-  box-shadow: 0px 1px 4px #1d3dcdab;
- /* lesser shadow than a thumb so that track
-  is not distracting from the thumb */ 
+  box-shadow: 0px 1px 4px #1d3dcdab;  
+  margin: 3px;
+  padding: 5px;
 }
+
+  /* lesser shadow than a thumb so that track is not distracting from the thumb */ 
+
+
 
   /*----------------------------------------------CALCULATE BUTTON STYLING*/
 
@@ -169,10 +181,13 @@ input[type=range]::-webkit-slider-runnable-track {
 
 label {
     text-transform: uppercase;
-    color: rgba(249, 253, 255, 0.243);
-    font-family: 'Kanit', sans-serif;
-    color: #032350;
-    font-weight: 500;
+    color:  #1363d3;
+    text-shadow: 0px 0px 1px #030b2cab; 
+    font-size: large;
+    font-family: 'Space Grotesk', sans-serif !important;
+    
+    
+
 }
 
 form #calculate-button {
@@ -190,6 +205,13 @@ h1 {
     color: rgb(237, 243, 250);
 }
 
+form .label-container {
+
+    padding: 3px;
+    border: none;
+    padding: 10px;
+ }
+
 
 /*------------------------------------------------NUMBERS AND ICON STYLE*/
 
@@ -202,6 +224,8 @@ input[type=number], i {
    padding-right: 10px;
    /* targeting both icons with i and number inputs so that there's a bit of give
    and number and symbols are not too flush to the input*/
+   margin: 5px;
+
 
    display: inline;
 }
@@ -209,6 +233,11 @@ input[type=number], i {
    vertical-align: middle;
    this ligns the input and slideer and icons so that they are vertically in the middle and 
    inline with each other */
+
+   .slider-container {
+    padding: 5px;
+    margin: 5px;
+   }
 
    /*--------------------FIXING THE BREAKPOINTS FOR THE FORM ITEMS*/
 
@@ -227,6 +256,8 @@ input[type=number], i {
    }
 
    /* after tidying up sliders are all of a sudden less than 270px - trying to fix that */
+
+
 
 
 
