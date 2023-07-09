@@ -92,3 +92,93 @@ Breakpoint/debugger video reference https://www.youtube.com/watch?v=ABlaMXkUwzY
 
 https://docs.google.com/spreadsheets/d/1-tKBrNlmaYXdhLNhJXaNDh2xXvcBtZiJXVtMaborDeg/edit#gid=0   
 */
+
+
+
+/* IF ELSE FORMULA WITH MISTAKES
+
+
+function calculateMortgage(event) {
+ event.preventDefault(); 
+   // disables form being sent off and lets function do the calc
+
+
+
+   let loanTerm = document.getElementById("mortgage-term").value; //  BORROWING RATE
+   console.log("loanTerm " + loanTerm); 
+
+   let totalPayouts = loanTerm * 12;
+   console.log(totalPayouts);
+
+   document.getElementById("year-to-month-conversion").value = totalPayouts;  // what prints the numberf for TOTAL PAYOUTS
+ 
+   let yearlyRate = document.getElementById("borrowing-rate").value;
+   console.log(yearlyRate);
+
+   let mortgageAmount = document.getElementById("mortgage-amount").value;
+   console.log(mortgageAmount);
+
+   if (yearlyRate === 0) {
+      // make mortgage amount equal to total cost 
+      document.getElementById("total-repayment-cost").value = mortgageAmount;
+      let totalCost = Math.round(totalCost)
+
+      let w = mortgageAmount / totalPayouts;
+      console.log("6. W " + w);
+
+      let result = mortgageAmount * w; // Let's call it T - total
+      console.log("7. Result " + result);
+
+
+   }  else {
+   
+      let montlyTermInterest = yearlyRate / 100 / 12 ;
+      console.log("2. MI " + montlyTermInterest);
+      
+      let p = (1 + montlyTermInterest) ** totalPayouts;
+      console.log("3. P " + p); // 1.490832682418262
+      
+      let t = p - 1;
+      console.log("4. T " + t); //0.49083268241826206
+      
+      let b = montlyTermInterest * p;
+      console.log("5. B " + b); // 0.00496944227472754
+      
+      let w = t / b
+
+      document.getElementById("total-repayment-cost").value = mortgageAmount;
+      let totalCost = Math.round(totalCost)
+      
+      let w = mortgageAmount / totalPayouts;
+      console.log("6. W " + w);
+
+      let result = mortgageAmount * w; // Let's call it T - total
+      console.log("7. Result " + result); // 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
+
+
+
+      let totalCost = result / totalPayouts; 
+      totalCost = Math.round(totalCost); // rounding out the number
+      console.log("8. Total mortgage Amount " + totalCost); // 164616.95809555508 so we can round out,
+      console.log("8. Total mortgage Amount " + Math.round(totalCost)); // 164617
+      
+      let totalCostPunctuating = totalCost.toLocaleString("en-IE");
+      console.log(totalCostPunctuating)
+      document.getElementById("total-repayment-cost").value = totalCostPunctuating; // what prints number TOTAL COST
+   
+      let montlyRepayment = totalCost / totalPayouts;
+      montlyRepayment = Math.round(montlyRepayment); // if I don't add var = round.math(var) - it will not round
+      console.log("Monthly Repayment = " + montlyRepayment); 
+   
+      let montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
+      document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number MONTHLY COST 
+      debugger
+   
+   }
+   
+}
+
+
+
+*/
+

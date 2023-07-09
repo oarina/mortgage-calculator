@@ -1,5 +1,7 @@
- /* This function is called from the onchange element in HTML that needs to change and will
-    fetch the value from the ID linked element and paste the change to the onclick*/ 
+ /* This function is called from the oninput element in HTML that needs to change and will
+    fetch the value from the ID linked element and   ste the change to the onclick*/ 
+    
+    
     function updateMortgageAmount(value) {
       document.getElementById("mortgage-amount").value = value; 
       console.log("mortgage-amount" + value);
@@ -38,17 +40,28 @@ function calculateMortgage(event) {
    let loanTerm = document.getElementById("mortgage-term").value;
    console.log("loanTerm " + loanTerm); 
 
-   let totalPayouts = loanTerm * 12;
+   let totalPayouts = loanTerm * 12; //
    console.log(totalPayouts);
 
-   document.getElementById("year-to-month-conversion").value = totalPayouts;  // what prints the number
+   document.getElementById("year-to-month-conversion").value = totalPayouts;  // what prints the TOTAL PAYOUTS RESULT
  
-   let yearlyRate = document.getElementById("borrowing-rate").value;
+   let yearlyRate = document.getElementById("borrowing-rate").value; //mortgage term
    console.log(yearlyRate);
 
-   let mortgageAmount = document.getElementById("mortgage-amount").value;
+   let mortgageAmount = document.getElementById("mortgage-amount").value; // mortgage amount
    console.log(mortgageAmount);
 
+if (yearlyRate === 0){
+   //Make mortgage amount equal to total cost
+   document.getElementById("total-repayment-cost").value = mortgageAmount;
+
+   // Divide mortgage amout by total payouts
+   let montlyRepayment = mortgageAmount / totalPayouts;
+   // Now let's add a comma to the number result
+   let montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
+   document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints MONTLY COST FOR 0 RATE
+
+} else {
    let montlyTermInterest = yearlyRate / 100 / 12 ;
    console.log("2. MI " + montlyTermInterest);
    
@@ -61,20 +74,14 @@ function calculateMortgage(event) {
    let b = montlyTermInterest * p;
    console.log("5. B " + b); // 0.00496944227472754
    
-   let w;
-   if 
-      (yearlyRate === 0)  {
-          w = mortgageAmount / totalPayouts;
-         console.log("6. W " + w);
-      } else { 
-         w = t / b;
-         console.log("6. W " + w); // 98.77017485733305
-      }
-
+   let w = t / b
    
+   w = mortgageAmount / totalPayouts;
+         console.log("6. W " + w);
+         console.log("6. W " + w); // 98.77017485733305
+      
    let result = mortgageAmount * w; // Let's call it T - total
    console.log("7. Result " + result); // 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
-   debugger
 
 
    let totalCost = result / totalPayouts; 
@@ -84,13 +91,18 @@ function calculateMortgage(event) {
    
    let totalCostPunctuating = totalCost.toLocaleString("en-IE");
    console.log(totalCostPunctuating)
-   document.getElementById("total-repayment-cost").value = totalCostPunctuating; // what prints number
+   document.getElementById("total-repayment-cost").value = totalCostPunctuating; // what prints number TOTAL COST
 
    let montlyRepayment = totalCost / totalPayouts;
    montlyRepayment = Math.round(montlyRepayment); // if I don't add var = round.math(var) - it will not round
    console.log("Monthly Repayment = " + montlyRepayment); 
    let montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
-   document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number 
+   document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number  MONTHLY COST
+
+}
+
+   debugger
+   
 }
 
 /*
