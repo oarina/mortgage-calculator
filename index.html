@@ -28,7 +28,7 @@
 
           pattern="[0-9]{5,7}" title="Please enter a valid number between 25000 and 9999999"
           
-          onchange="updateMortgageSliderAmount(this.value)">
+          oninput="updateMortgageSliderAmount(this.value)">
 
            <!--for the moment using pattern="[0-9]" need 5 digits and minimum is 25 000 (5 numbers)
           had to change the input type to TEXT as pattern does not work with a number
@@ -45,7 +45,7 @@
         </div>
 
         <div class="slider-container">
-              <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" onchange="updateMortgageAmount(this.value)">
+              <input type="range" id="mortgage-slider" name="mortgage-slider" min="25000" max="1000000" value="500000" step="5000" oninput="updateMortgageAmount(this.value)">
                 <!--Got inspired from (data-stepsslider="5000") seen in https://www.moneycoach.ie/mortgages/repayment-calculator/, so added step="5000" above-->    
         </div>
       </div>
@@ -57,18 +57,17 @@
       
           <div id="currency-input-container">
             <span><i class="fa-solid fa-percent"></i></span>
-            <input type="text" name="borrowing-rate" id="borrowing-rate" value="4"
+            <input type="text" name="borrowing-rate" id="borrowing-rate" value="4.2" min="0" max="20" step="0.2"
 
-            pattern="^(0|[1-9]|1[0-9]|20)$" title="Please enter a valid number between 0 and 20"
+            
+            required oninput="updateBorrowingRateAmount(this.value)">
 
-            required onchange="updateBorrowingRateAmount(this.value)">
-
-            <!-- min="0" max="20" -->
+            <!-- pattern="^(0|[1-9]|1[0-9]|20)$" title="Please enter a valid number between 0 and 20"-->
           </div>
 
-          
+
           <div class="slider-container">
-            <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="4" onchange="updateRateSliderAmount(this.value)">
+            <input type="range" name="rate-slider" id="rate-slider" min="0" max="20" value="4.2" step="0.2" oninput="updateRateSliderAmount(this.value)">
           </div>
       </div>
       
@@ -81,17 +80,18 @@
             <span><i class="fa-solid fa-calendar-days"></i></span>
             <input type="text" name="mortgage-term" id="mortgage-term"required  min="5"  max="35" value="15" 
 
-            pattern="^5[5-9]|1[0-9]35$" title="Please enter a valid number between 5 and 35"
+         
 
-            <!--pattern="^5[5-9]|1[0-9]35$"
+            oninput="updateMortgageTermAmunt(this.value)">
+             <!--pattern="^5[5-9]|1[0-9]35$"
               "[0-9]{1,2}"
-            -->
 
-            onchange="updateMortgageTermAmunt(this.value)">
+                 pattern="^5[6-9]|1[0-9]35$" title="Please enter a valid number between 5 and 35"
+            -->
           </div>
 
           <div class="slider-container">
-            <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" onchange="updateTermSliderAmount(this.value)">
+            <input type="range" name="term-slider" id="term-slider" min="5" max="35" value="15" oninput="updateTermSliderAmount(this.value)">
           </div>
       </div>
 

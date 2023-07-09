@@ -48,7 +48,9 @@ In addition, you may also use this section to discuss plans for additional featu
 
 ### Features Left to Implement
 
-- Another feature idea
+- Quick estimate slider
+- Black swan event calculation 
+- Best case scenario calcuation for the market
 
 ## Testing 
 

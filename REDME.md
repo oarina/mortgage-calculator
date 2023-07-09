@@ -2,6 +2,8 @@
 
 [Site to go here] This calculator intended to be an estimate of a repayment taking into account the borrowing rate.
 
+NOTE: It does not take into consideration the differences between rates. 
+
 ***
 
 Morgage estimators online are provided mostly by the lending institutions themselves.
@@ -10,7 +12,7 @@ It's hard to know what mortgage rates would be like after the fixed rate term is
 
 Especially if your mortgage is 30 years it would be good to estimate the the payback rate so that one may be prepared better for more scenarios. 
 
-Back in 1980's in Ireland the interest rates went up to 16% due to inflation (reference https://www.moneyguideireland.com/history-of-mortgage-rates-in-ireland.html). Most likely this will not happen in the next 20 to 30 years, but in the rare chance - why not make a rought estimate?
+Back in 1980's in Ireland the interest rates went up to 16% due to inflation (reference https://www.moneyguideireland.com/history-of-mortgage-rates-in-ireland.html). Most likely this will not happen in the next 20 to 30 years, but in the rare chance - why not make a rought estimate? 
 
 
 # Table of Contents
@@ -54,13 +56,21 @@ Back in 1980's in Ireland the interest rates went up to 16% due to inflation (re
 
 
 # UX
-## First-time home buyer Goals
+## First-time home buyer Goals 
 
-### Target users
+### Target users 
 
-* Anyone in Ireland who is considering buying their first home and have already been to a bank/s and are looking to estimate a good deal factoring in potential rise in interest rates as per ECB.
+* Anyone in Ireland who is considering buying their first home and have already been to a bank's and are looking to estimate a good deal factoring in potential rise in interest rates as per ECB. 
 
-### User Goals
+*  
+
+
+
+### User Goals 
+
+- Quick estimate slider
+- Black swan event calculation 
+- Best case scenario calcuation for the market
 
 #### Calculator fills those needs accordingly
 
@@ -76,7 +86,7 @@ Back in 1980's in Ireland the interest rates went up to 16% due to inflation (re
 
  * Single individual
 
- * Someone who wants to become aware of any government scheme to help get onto the property ladder
+ * Someone who wants to become aware of any government scheme to help get onto the property ladder.
 
  * Someone who may be looking to take on a longterm mortage - e.g. 35 years
 
@@ -85,6 +95,8 @@ Back in 1980's in Ireland the interest rates went up to 16% due to inflation (re
  * Someone who is not sure what kind of mortage is best and got a few  quotes (fixed and variable) and want to find out which one is best.
 
  * Someone who wants to consider best and worst case scenario.
+
+ * Realtor- who already has actual rate 
 
 ## Visual Design
 
@@ -150,11 +162,12 @@ note (add a colour to it)
 ## Platforms 
 * Codeanywhere 
 * VS Code both native and cloud
+* 
 
 ## Testing 
 
 * Every single possible  entry (each form)
-*
+* 
 *
 *
 *

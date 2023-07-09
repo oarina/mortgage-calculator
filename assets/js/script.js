@@ -61,12 +61,22 @@ function calculateMortgage(event) {
    let b = montlyTermInterest * p;
    console.log("5. B " + b); // 0.00496944227472754
    
-   let w = t / b;
-   console.log("6. W " + w); // 98.77017485733305
+   let w;
+   if 
+      (yearlyRate === 0)  {
+          w = mortgageAmount / totalPayouts;
+         console.log("6. W " + w);
+      } else { 
+         w = t / b;
+         console.log("6. W " + w); // 98.77017485733305
+      }
+
    
    let result = mortgageAmount * w; // Let's call it T - total
    console.log("7. Result " + result); // 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
-   
+   debugger
+
+
    let totalCost = result / totalPayouts; 
    totalCost = Math.round(totalCost); // rounding out the number
    console.log("8. Total mortgage Amount " + totalCost); // 164616.95809555508 so we can round out,
