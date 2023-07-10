@@ -17,16 +17,17 @@
       <div class="styling-amount-container">
             <!--Just by wrapping span and inputs - that brought the symbols beside the inputs-->
         <div class="label-container">
-              <label for="mortgage-amount">Mortgage amount</label>
+              <label for="mortgage-amount">
+                Mortgage amount
+              </label>
         </div>
 
-        <div id="currency-input-container">
+        <div id="currency-input-container-1">
           <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
           <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
               a function will then change that same value in the ID linked element. -->
-          <input type="text" name="mortgage-amount" id="mortgage-amount" value="500000" pattern="[0-9]{5,7}" title="Please enter a valid number between 25000 and 9999999 
-          oninput="updateMortgageSliderAmount(this.value)">
-
+          <input type="text" name="mortgage-amount" id="mortgage-amount" value="500000" min="25000" max="9999999" pattern="[0-9]{5,7}" title="Please enter a valid number between 25000 and 9999999" oninput="updateMortgageSliderAmount(this.value)">
+          
            <!--for the moment using pattern="[0-9]" need 5 digits and minimum is 25 000 (5 numbers)
           had to change the input type to TEXT as pattern does not work with a number
           minlength="5" maxlength="7" - gives a message "please match the format required - this is not very clear
@@ -34,10 +35,7 @@
           2nd ref: https://www.w3schools.com/tags/att_input_pattern.asp 
           3rd ref; https://stackoverflow.com/questions/47769289/html-pattern-to-only-accept-numbers 
           4th reference: https://cheatography.com/davechild/cheat-sheets/regular-expressions/ 
-          5th referene: https://www.youtube.com/watch?v=7y4f0Fx7XzY 
-
-          could aslo add that: min="25000" max="9999999"
-        --> 
+          5th referene: https://www.youtube.com/watch?v=7y4f0Fx7XzY--> 
         </div>
 
         <div class="slider-container">
@@ -51,16 +49,11 @@
           <label for="borrowing-rate">Borrowing rate</label>
         </div>
       
-          <div id="currency-input-container">
+          <div id="currency-input-container-2">
             <span><i class="fa-solid fa-percent"></i></span>
-            <input type="text" name="borrowing-rate" id="borrowing-rate"  min="0" max="20.0" value="4.2" 
-
-            
-            required oninput="updateBorrowingRateAmount(this.value)">
-
+            <input type="text" name="borrowing-rate" id="borrowing-rate"  min="0" max="20" value="4.2" required oninput="updateBorrowingRateAmount(this.value)">
             <!-- pattern="^(0|[1-9]|1[0-9]|20)$" title="Please enter a valid number between 0 and 20"-->
           </div>
-
 
           <div class="slider-container">
             <input type="range" name="rate-slider" id="rate-slider"  min="0" max="20" value="4.2" oninput="updateRateSliderAmount(this.value)">
@@ -72,18 +65,9 @@
           <label for="mortgage-term">Mortgage term</label>
         </div>
        
-          <div id="currency-input-container">
+          <div id="currency-input-container-3">
             <span><i class="fa-solid fa-calendar-days"></i></span>
-            <input type="text" name="mortgage-term" id="mortgage-term"required  min="5"  max="35" value="15" 
-
-         
-
-            oninput="updateMortgageTermAmunt(this.value)">
-             <!--pattern="^5[5-9]|1[0-9]35$"
-              "[0-9]{1,2}"
-
-                 pattern="^5[6-9]|1[0-9]35$" title="Please enter a valid number between 5 and 35"
-            -->
+            <input type="text" name="mortgage-term" id="mortgage-term" required  min="5"  max="35" value="15" oninput="updateMortgageTermAmunt(this.value)">
           </div>
 
           <div class="slider-container">
@@ -102,7 +86,7 @@
       <label for="year-to-month-conversion">Total payouts</label>
     </div>
       
-    <div id="result-currency-container">
+    <div id="result-currency-container-1">
       <span><i class="fa-solid fa-calendar-days"></i></span>
       <input type="number" id="year-to-month-conversion" readonly>
     </div>
@@ -111,7 +95,7 @@
       <label for="monthly-repayment-cost">Monthly cost</label>
     </div>
 
-    <div id="result-currency-container">
+    <div id="result-currency-container-2">
       <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
       <input type="text" id="monthly-repayment-cost" readonly>
     </div>
@@ -120,7 +104,7 @@
       <label for="total-repayment-cost">Total cost</label>
     </div>
 
-    <div id="result-currency-container">
+    <div id="result-currency-container-3">
       <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
       <input type="text" id="total-repayment-cost" readonly>
     </div>
@@ -129,20 +113,9 @@
  
 </main>
 
-
-
-
-
-  <!-- <span style="position: absolute; margin-left: 1px; margin-top: 1px;">€</span>
-  code is attributed to Sebastian in 
-  https://stackoverflow.com/questions/2913236/html-text-input-field-with-currency-symbol-->
-
-
 <!--font awesome script-->
     <script src="https://kit.fontawesome.com/9e5468dc87.js" crossorigin="anonymous"></script>
 
     <script src="assets/js/script.js"></script>
-
-    <!--https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LMR101+2021_T1/courseware/0a4bf408d10c4149bb686457ac11edf6/16d62f1111064f5cb6a64582da96a41b/-->
 </body>
 </html>

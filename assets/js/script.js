@@ -47,11 +47,11 @@ function calculateMortgage(event) {
     console.log("*Function activated");
 
     // VARIABLES: input field
-    let loanTerm = document.getElementById("mortgage-term").value;
+    let loanTerm = parseFloat(document.getElementById("mortgage-term").value);
     console.log("loanTerm " + loanTerm);
-    let yearlyRate = document.getElementById("borrowing-rate").value;
+    let yearlyRate = parseFloat(document.getElementById("borrowing-rate").value);
     console.log("yearlyRate " + yearlyRate);
-    let mortgageAmount = document.getElementById("mortgage-amount").value;
+    let mortgageAmount = parseFloat(document.getElementById("mortgage-amount").value);
     console.log("mortgageAmount" + mortgageAmount);
 
     // VARIABLES: amortization formula
@@ -83,7 +83,7 @@ function calculateMortgage(event) {
         // Application of the formula as per lucidchart
         calculation2 = yearlyRate / 100 / 12;
         console.log("2. MI/montlyTermInterest/calculation2 " + calculation2);
-        calculation3 = (1 + calculation2) ** calculation1;
+        calculation3 = Math.pow(1 + calculation2, calculation1);
         console.log("3. calculation3 / P " + calculation3);
         calculation4 = calculation3 - 1;
         console.log("4. calculation4 /T " + calculation4);

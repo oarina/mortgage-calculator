@@ -326,3 +326,85 @@ function calculateMortgage(event) {
          document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number  MONTHLY COST
       };
 }
+
+
+//-------------------------------------------------------------------------------------------before fixing with --jsLINT 
+
+function calculateMortgage(event) {
+   event.preventDefault();
+   console.log("*Function activated");
+
+   // VARIABLES: input field
+   let loanTerm = document.getElementById("mortgage-term").value;
+   console.log("loanTerm " + loanTerm);
+   let yearlyRate = document.getElementById("borrowing-rate").value;
+   console.log("yearlyRate " + yearlyRate);
+   let mortgageAmount = document.getElementById("mortgage-amount").value;
+   console.log("mortgageAmount" + mortgageAmount);
+
+   // VARIABLES: amortization formula
+   let calculation1 = loanTerm * 12; // calculation 1 belongs to both amortisation formula and the output field. it is also used in bot if and else
+   let calculation2;
+   let calculation3;
+   let calculation4;
+   let calculation5;
+   let calculation6;
+   let calculation8;
+
+   // VARIABLES: output field
+   let totalMortgageCost;
+   let monthlyRepayment;
+   let monthlyRepaymentPunctuating;
+
+   if (yearlyRate == 0) {
+       // Make mortgage amount equal to total cost
+       document.getElementById("total-repayment-cost").value = mortgageAmount;
+       console.log("mortgageAmount if statement" + mortgageAmount);
+
+       // Divide mortgage amount by total payouts
+       monthlyRepayment = mortgageAmount / calculation1;
+
+       // Add a comma to the number result
+       monthlyRepaymentPunctuating = monthlyRepayment.toLocaleString("en-EU");
+       document.getElementById("monthly-repayment-cost").value = monthlyRepaymentPunctuating;
+   } else {
+       // Application of the formula as per lucidchart
+       calculation2 = yearlyRate / 100 / 12;
+       console.log("2. MI/montlyTermInterest/calculation2 " + calculation2);
+       calculation3 = (1 + calculation2) ** calculation1;
+       console.log("3. calculation3 / P " + calculation3);
+       calculation4 = calculation3 - 1;
+       console.log("4. calculation4 /T " + calculation4);
+       calculation5 = calculation2 * calculation3;
+       console.log("5. B /calculation5 " + calculation5);
+       calculation6 = calculation4 / calculation5;
+       console.log("6. w /calculation6 " + calculation6);
+       calculation2 = mortgageAmount * calculation6;
+       console.log("7. calculation7 / Result " + calculation2);
+
+       // Let's call it T - total --- e.g. number 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
+       calculation8 = calculation2 / calculation1;
+       console.log("8. totalCost /calculation8 " + calculation8);
+
+       // Rounding out the number
+       calculation8 = Math.round(calculation8);
+       console.log("8. Total mortgage Amount/calculation8 " + calculation8);
+
+       // Applying a comma to the number for better readability
+       totalMortgageCost = calculation8.toLocaleString("en-IE");
+       console.log(totalMortgageCost);
+       monthlyRepayment = calculation8 / calculation1;
+
+       // If I don't add var = Math.round(var), it will not round
+       monthlyRepayment = Math.round(monthlyRepayment);
+       console.log("Monthly Repayment = " + monthlyRepayment);
+
+       // Applying a comma to the number
+       monthlyRepaymentPunctuating = monthlyRepayment.toLocaleString("en-EU");
+
+       // Sending result to the output fields
+       document.getElementById("total-repayment-cost").value = totalMortgageCost;
+       document.getElementById("year-to-month-conversion").value = calculation1;
+       document.getElementById("monthly-repayment-cost").value = monthlyRepaymentPunctuating;
+   }
+}

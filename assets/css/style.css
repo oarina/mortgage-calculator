@@ -40,7 +40,9 @@ form  {
     /* centers the slider input and the logo */
 }
 
-#currency-input-container {
+#currency-input-container-1,
+#currency-input-container-2,
+#currency-input-container-3 {
     /* this centers the display and currecy together
     a bit more in line with the result container result boxes */
     display: flex;
@@ -265,7 +267,9 @@ i {
     align-items: baseline; /* centers the slider input and the logo */
 }
 
-#result-currency-container {
+#result-currency-container-1,
+#result-currency-container-2,
+#result-currency-container-3 {
     display: flex;
     justify-content: center; 
     margin-top: 5px;
