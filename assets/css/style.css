@@ -332,19 +332,6 @@ i {
     margin-bottom: 5px;
 }
 
-/*----------------------------------------------PUBLISHED CALCULATOR HISTORY STYLING (POSSIBLE SECTION)*/
-
-#results-history-container {
-    margin: 40px auto; 
-    /* this setting centers the form,
-    but also leaves space between boxes */
-    background-color: rgba(28, 78, 187, 0.13);
-    border-radius: 15px;
-    padding: 20px; /* gives form a padding */
-    box-shadow: 0px 5px 5px #1d3dcdab; 
-
-    align-items: baseline; /* centers the slider input and the logo */
-}
 
 
    

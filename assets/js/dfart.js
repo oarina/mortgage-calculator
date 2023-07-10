@@ -79,7 +79,7 @@ ERRORS:
 
 
 ISSUES:
-Rouding issue: montlyRepayment = Math.round(montlyRepayment); // if I don't add var = round.math(var) - it will not round 
+Rouding issue: montlyRepayment = Math.round(montlyRepayment); // if I don't add var = round.math(var) - it will not round  
 
 
 
