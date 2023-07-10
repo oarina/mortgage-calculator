@@ -6,7 +6,6 @@ body {
 }
 /*-------------------------------------------------Form styling*/
 
-
 input[type=text], 
 input[type=number] {
     width: 80px; /* let's shrink the width so that i can put the label and input in one line (make space) */
@@ -19,7 +18,6 @@ input[type=number] {
 
     border: none;
     /*removes sharpmness from the edges, but the shadows are still there */
-    
 }
 
 input::-webkit-inner-spin-button,
@@ -38,7 +36,6 @@ form  {
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
     box-shadow: 0px 5px 5px #1d3dcdab; 
-
     align-items: baseline; 
     /* centers the slider input and the logo */
 }
@@ -65,7 +62,6 @@ form  {
 
     /* only adding the result container to the existing rule - which worked, 
     however now need*/
-
     .styling-amount-container,
     .styling-rate-container,
     .styling-term-container {
@@ -120,58 +116,43 @@ form  {
     width: 100% !important;
     max-width: 270px !important;
      /* after tidying up sliders are all of a sudden less than 270px - trying to fix that */
-
 }
 
 
 input[type=range]::-webkit-slider-thumb {
   box-shadow: 2px 5px 7px #1d3dcdab; 
-
   /* Some of the code is taken and inspired by 
   https://www.cssportal.com/style-input-range/ */
-
   border: 7px solid #83a2e5db;
   border-radius: 23px;
   background: #4b4396;
   -webkit-appearance: none;
-
   color: blue; /* need to change the color of the thumb! */
 }
 
-
-input[type=range]::-webkit-slider-runnable-track {
-
-  
+input[type=range]::-webkit-slider-runnable-track {  
   border-radius: 12px; 
   /* rounds out the borders  around the slider*/
-
   margin: 1px;
   padding: 1px;
-
     /*box-shadow: 0px 1px 4px #1d3dcdaf; 
   background-color: #1363d34b; 
   avoe settings are a little bit too much and are distracting 
   from the number input box, calculate button and h1 */
 }
 
-
-
-
   /*----------------------------------------------CALCULATE BUTTON STYLING*/
 
   #calculate-button {
-
     text-transform: uppercase;
     width: 226px; 
     background-color: rgba(0, 68, 255, 0.826);
     border-radius: 12px;
     height: 40px;
     box-shadow: 0px 5px 5px #1d3dcdab; 
-
     border: none;
     color: rgb(237, 243, 250);
     letter-spacing: 5px;
-
   }
 
   .styling-button-container {
@@ -181,7 +162,6 @@ input[type=range]::-webkit-slider-runnable-track {
     margin-bottom: 20px;
     /* this puts the button in the centre */
   }
-
 
 /*------------------------------------------------STYLING H1*/
 
@@ -194,9 +174,7 @@ input[type=range]::-webkit-slider-runnable-track {
     padding: 20px; /* gives form a padding */
     box-shadow: 0px 5px 5px #1d3dcdab; 
     /* Using the same style as the form */
-    text-align: center;
-
-    
+    text-align: center;    
 }
 
 /*-----------------------------------------------FONT STYLING */
@@ -207,24 +185,19 @@ label {
     text-shadow: 0px 0px 1px #030b2cab; 
     font-size: large;
     /*font-family: 'Space Grotesk', sans-serif !important;
-
     FONT DESICION LOGIC:
     was my original idea for the font I was worried it may be hard to see, 
     but after seeing couple of UX inspired desinges aka https://dribbble.com/shots/9933822-Mortgage-Calculator 
     decided to revert back to a more gentlefont, so that it does not distract from the numbers, h1 and the button
     */
-
     font-family: 'Kanit', sans-serif;
-
 }
 
 form #calculate-button  {
     font-family: 'Space Grotesk', sans-serif !important;
     font-size: large;
     text-shadow: 0px 5px 10px #07144eab
-    
 }
-
 
 h1 {
     font-family: 'Space Grotesk', sans-serif;
@@ -234,7 +207,6 @@ h1 {
 }
 
 form .label-container {
-
     padding: 3px;
     border: none;
     padding: 3px;
@@ -248,21 +220,16 @@ i {
    color:  #1363d3;
   /* text-shadow: 0px 0px 1px #1d3dcdab; */
    font-size: large;
-
    padding-left: 10px;
    padding-right: 10px;
    /* targeting both icons with i and number inputs so that there's a bit of give
    and number and symbols are not too flush to the input*/
    margin: 5px;
-
-
    display: inline;
 }
-   /* 
-   vertical-align: middle;
+   /*  vertical-align: middle;
    this ligns the input and slideer and icons so that they are vertically in the middle and 
    inline with each other */
-
    .slider-container {
     padding: 5px;
     margin: 5px;
@@ -283,14 +250,11 @@ i {
     width: 100%;
     max-width: 270px;
    }
-
    /* after tidying up sliders are all of a sudden less than 270px - trying to fix that */
 
    /*---------------------------------------------RESULT CONTAINER STYLING */
-
   
    #styling-result-container {
-
     margin: 40px auto; 
     /* this setting centers the form,
     but also leaves space between boxes */
@@ -298,9 +262,7 @@ i {
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
     box-shadow: 0px 5px 5px #1d3dcdab; 
-
     align-items: baseline; /* centers the slider input and the logo */
- 
 }
 
 #result-currency-container {
