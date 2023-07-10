@@ -26,7 +26,7 @@
           <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
           <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
               a function will then change that same value in the ID linked element. -->
-          <input type="text" name="mortgage-amount" id="mortgage-amount" value="500000" min="25000" max="9999999" pattern="[0-9]{5,7}" title="Please enter a valid number between 25000 and 9999999" oninput="updateMortgageSliderAmount(this.value)">
+          <input type="text" name="mortgage-amount" id="mortgage-amount" value="500000"  minlength="5" maxlength="7" pattern="[0-9]{5,7}" title="Please enter a valid number between 25000 and 9999999" oninput="updateMortgageSliderAmount(this.value)">
           
            <!--for the moment using pattern="[0-9]" need 5 digits and minimum is 25 000 (5 numbers)
           had to change the input type to TEXT as pattern does not work with a number
@@ -51,7 +51,7 @@
       
           <div id="currency-input-container-2">
             <span><i class="fa-solid fa-percent"></i></span>
-            <input type="text" name="borrowing-rate" id="borrowing-rate"  min="0" max="20" value="4.2" required oninput="updateBorrowingRateAmount(this.value)">
+            <input type="text" name="borrowing-rate" id="borrowing-rate"   minlength="1" maxlength="3" value="4.2" required oninput="updateBorrowingRateAmount(this.value)">
             <!-- pattern="^(0|[1-9]|1[0-9]|20)$" title="Please enter a valid number between 0 and 20"-->
           </div>
 
@@ -67,7 +67,7 @@
        
           <div id="currency-input-container-3">
             <span><i class="fa-solid fa-calendar-days"></i></span>
-            <input type="text" name="mortgage-term" id="mortgage-term" required  min="5"  max="35" value="15" oninput="updateMortgageTermAmunt(this.value)">
+            <input type="text" name="mortgage-term" id="mortgage-term" required   minlength="1" maxlength="2" value="15" oninput="updateMortgageTermAmunt(this.value)">
           </div>
 
           <div class="slider-container">
