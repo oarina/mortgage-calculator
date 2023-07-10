@@ -121,6 +121,14 @@ function calculateMortgage(event) {
     }
 }
 
+/*-------------------------------------------------------------------------------------------------------------------LOOP*/
+
+// Sliders are 
+let sliders = document.querySelectorAll('input[type="range"]');
+// Inspired with querySelectorAll here https://itnext.io/5-ways-to-loop-over-dom-elements-from-queryselectorall-in-javascript-55bd66ca4128 
+for (let slider of sliders) {
+   slider.addEventListener('input', calculateMortgage);
+ }
 
 
 
