@@ -59,8 +59,7 @@ form  {
   @media screen and (min-width: 350px) {
     form,
     h1,
-    #styling-result-container,
-    #results-history-container {
+    #styling-result-container {
         width: 275px;
     }
 
@@ -81,16 +80,14 @@ form  {
 @media screen and (min-width: 750px) {
     form,
     h1,
-    #styling-result-container,
-    #results-history-container {
+    #styling-result-container {
       width: 720px;
     }
   
     .styling-amount-container,
     .styling-rate-container,
     .styling-term-container,
-    #styling-result-container,
-    #results-history-container {
+    #styling-result-container {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -242,15 +239,6 @@ form .label-container {
     border: none;
     padding: 3px;
  }
-
- #results-history-container {
-    text-transform: uppercase;
-    color:  #1363d3;
-    text-shadow: 0px 0px 1px #030b2cab; 
-    font-family: 'Space Grotesk', sans-serif !important;
-    text-align: center;
- }
-
 
 /*------------------------------------------------NUMBERS AND ICON STYLE*/
 
