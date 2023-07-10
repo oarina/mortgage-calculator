@@ -25,7 +25,7 @@
         </div>
 
         <div id="currency-input-container-1">
-          <span><i class="fa-sharp fa-solid fa-euro-sign"</i></i></span>
+          <span><i class="fa-sharp fa-solid fa-euro-sign"></i></span>
           <!--onchange in the imput calls a function made that changes the value of the lined element. If slider value changes - 
               a function will then change that same value in the ID linked element. -->
           <input type="text" name="mortgage-amount" id="mortgage-amount" value="500000"  aria-label="mortgage amount input field" minlength="5" maxlength="7" pattern="[0-9]{5,7}" title="Please enter a valid number between 25000 and 9999999" oninput="updateMortgageSliderAmount(this.value)">
@@ -60,7 +60,7 @@
           <div class="slider-container">
             <input type="range" name="rate-slider" id="rate-slider"  aria-label="mortgage rate slider" min="0" max="20" value="4.2" oninput="updateRateSliderAmount(this.value)">
           </div>
-        </div>
+      </div>
       
       <div class="styling-term-container">
         <div class="label-container">
@@ -115,7 +115,6 @@
 
   </div>
 
-</div>
 
 <!--font awesome script-->
     <script src="https://kit.fontawesome.com/9e5468dc87.js" crossorigin="anonymous"></script>
