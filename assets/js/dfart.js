@@ -408,3 +408,40 @@ function calculateMortgage(event) {
        document.getElementById("monthly-repayment-cost").value = monthlyRepaymentPunctuating;
    }
 }
+
+/*-------------------------------------------------------------------------------------------------------------------INPUT FIELD SECTION */
+/** collects value from the mortgage amount siler and assigns the same value to the mortgage amount input field */
+function updateMortgageAmount(value) {
+   document.getElementById("mortgage-amount").value = value; 
+   console.log("mortgage-amount" + value);
+};
+
+/** collects value from the mortgage amount input field and assigns the same value to the mortgage amount slider */
+ function updateMortgageSliderAmount(value) {
+   document.getElementById("mortgage-slider").value = value;
+   console.log("mortgage-slider" + value);
+};
+
+/** collects value from the mortgage rate siler and assigns the same value to the mortgage rate input field */
+ function updateBorrowingRateAmount(value) {
+   document.getElementById("rate-slider").value = value;
+   console.log("rate-slider" + value);
+};
+
+/** collects value from the mortgage rate input field and assigns the same value to the mortgage rate slider */
+ function updateRateSliderAmount(value){
+   document.getElementById("borrowing-rate").value = value;
+   console.log("borrowing-rate" + value);
+};
+
+/** collects value from the mortgage term siler and assigns the same value to the mortgage term input field */
+ function updateMortgageTermAmunt(value) {
+   document.getElementById("term-slider").value = value;
+   console.log("rate-slider" + value);
+};
+
+/** collects value from the mortgage term input field and assigns the same value to the mortgage term slider */
+ function updateTermSliderAmount(value){
+   document.getElementById("mortgage-term").value = value;
+   console.log("mortgage-term" + value);
+};

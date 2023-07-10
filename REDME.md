@@ -1,8 +1,8 @@
 # Mortgage Calculator for first time home buyers in Ireland.
 
-[Site to go here] This calculator intended to be an estimate of a repayment taking into account the borrowing rate.
+[Mortgage Calculator](https://oarina.github.io/mortgage-calculator/) This calculator intended to be an estimate of a repayment taking into account the borrowing rate.
 
-NOTE: It does not take into consideration the differences between rates. 
+NOTE: It does not take into consideration the differences between variable or fixrd term rates. 
 
 ***
 
@@ -81,10 +81,6 @@ Back in 1980's in Ireland the interest rates went up to 16% due to inflation (re
 
 
 ## User Stories
-
- * Couple
-
- * Single individual
 
  * Someone who wants to become aware of any government scheme to help get onto the property ladder.
 
