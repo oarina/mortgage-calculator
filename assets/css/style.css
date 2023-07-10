@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Space+Grotesk:wght@500&display=swap');
 
 body {
-    background-color: rgba(12, 134, 228, 0.127);
+    background-color: #EDF3FA;
 }
 /*-------------------------------------------------Form styling*/
 
 input[type=text], 
 input[type=number] {
     width: 80px; /* let's shrink the width so that i can put the label and input in one line (make space) */
-    background-color: rgba(247, 249, 255, 0.656);
+    background-color: #EDF3FA;
     border-radius: 12px;
    
     height: 25px; /* making input box a reasonably good size */
@@ -129,7 +129,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 23px;
   background: #4b4396;
   -webkit-appearance: none;
-  color: blue; /* need to change the color of the thumb! */
+  color: #29437A; /* need to change the color of the thumb! */
 }
 
 input[type=range]::-webkit-slider-runnable-track {  
@@ -137,10 +137,6 @@ input[type=range]::-webkit-slider-runnable-track {
   /* rounds out the borders  around the slider*/
   margin: 1px;
   padding: 1px;
-    /*box-shadow: 0px 1px 4px #1d3dcdaf; 
-  background-color: #1363d34b; 
-  avoe settings are a little bit too much and are distracting 
-  from the number input box, calculate button and h1 */
 }
 
   /*----------------------------------------------CALCULATE BUTTON STYLING*/
@@ -148,12 +144,12 @@ input[type=range]::-webkit-slider-runnable-track {
   #calculate-button {
     text-transform: uppercase;
     width: 226px; 
-    background-color: rgba(0, 68, 255, 0.826);
+    background-color: #29437A;
     border-radius: 12px;
     height: 40px;
     box-shadow: 0px 5px 5px #1d3dcdab; 
     border: none;
-    color: rgb(237, 243, 250);
+    color: #EDF3FA;
     letter-spacing: 5px;
   }
 
@@ -171,7 +167,7 @@ input[type=range]::-webkit-slider-runnable-track {
     margin: 40px auto; 
     /* this setting centers the form,
     also the 40px gives space between h1 and form  */
-    background-color: rgba(11, 53, 145, 0.806);
+    background-color: #29437A;
     border-radius: 15px;
     padding: 20px; /* gives form a padding */
     box-shadow: 0px 5px 5px #1d3dcdab; 
@@ -183,7 +179,8 @@ input[type=range]::-webkit-slider-runnable-track {
 
 label {
     text-transform: uppercase;
-    color:  #1363d3;
+    color:  #29437A;
+    font-weight: bold;
     text-shadow: 0px 0px 1px #030b2cab; 
     font-size: large;
     /*font-family: 'Space Grotesk', sans-serif !important;
@@ -205,7 +202,7 @@ h1 {
     font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: rgb(237, 243, 250);
+    color: #EDF3FA;
 }
 
 form .label-container {
@@ -219,7 +216,7 @@ form .label-container {
 input[type=number],
 input[type=text],
 i {
-   color:  #1363d3;
+   color: #29437A;
   /* text-shadow: 0px 0px 1px #1d3dcdab; */
    font-size: large;
    padding-left: 10px;
