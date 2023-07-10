@@ -161,6 +161,15 @@ input[type=range]::-webkit-slider-runnable-track {
     /* this puts the button in the centre */
   }
 
+  #calculate-button:hover {
+   background-color: #1363d3;
+  }
+
+  #calculate-button:active {
+    background-color: #EDF3FA;
+    color: #29437A;
+  }
+
 /*------------------------------------------------STYLING H1*/
 
  h1 {
