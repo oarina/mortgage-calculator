@@ -149,7 +149,7 @@ function calculateMortgage(event) {
       document.getElementById("total-repayment-cost").value = mortgageAmount;
       let totalCost = Math.round(totalCost)
       
-      let w = mortgageAmount / totalPayouts;
+     ERROR HERE: this calc belongs to if rate= 0 ---w was set twce let w = mortgageAmount / totalPayouts;
       console.log("6. W " + w);
 
       let result = mortgageAmount * w; // Let's call it T - total
@@ -194,79 +194,135 @@ form.addEventListener("submit",calculateMortgage);
  */
 
 function calculateMortgage(event) {
- event.preventDefault(); 
-   // disables form being sent off and lets function do the calc
-   console.log("*Function activated")
+   event.preventDefault(); 
+     // disables form being sent off and lets function do the calc
+     console.log("*Function activated")
+  
+     let loanTerm = document.getElementById("mortgage-term").value; console.log("loanTerm " + loanTerm); // setting term
+  
+     let calculation1 = loanTerm * 12;  console.log("1. totalPayouts/calculation1 " + calculation1); // setting total payouts TP or 1 in
+  
+     document.getElementById("year-to-month-conversion").value = calculation1;  // what prints the TOTAL PAYOUTS RESULT-----
+   
+     let yearlyRate = document.getElementById("borrowing-rate").value; //mortgage term
+     console.log("yearlyRate " + yearlyRate);
+  
+     let mortgageAmount = document.getElementById("mortgage-amount").value; console.log("mortgageAmount" + mortgageAmount); // mortgage amount
+       
+           //application of the formula as per lucidchart
+           let calculation2 = yearlyRate / 100 / 12 ; console.log("2. MI/montlyTermInterest/calculation2 " + calculation2);
+           
+           let calculation3 = (1 + calculation2) ** calculation1; console.log("3. calculation3 / P " + calculation3); 
+           
+           let calculation4 = calculation3 - 1; console.log("4. calculation4 /T " + calculation4); 
+           
+           let calculation5 = calculation2 * calculation3; console.log("5. B /calculation5 " + calculation5);
+           
+           let calculation6 = calculation4 / calculation5; console.log("6. w /calculation6 " + calculation6);
+           
+          /* calculation6 = mortgageAmount / calculation1; console.log("6. /calculation6 / W " + calculation6); this could be the reason for my formula break?*/
+              
+           let calculation7 = mortgageAmount * calculation6; // Let's call it T - total
+           console.log("7. calculation7 / Result " + calculation7); // e.g number 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
+  
+  
+           let calculation8 = calculation7 / calculation1; console.log("8. totalCost /calculation8 "+ calculation8)
+           
+           // rounding out the number
+           calculation8 = Math.round(calculation8); 
+           console.log("8. Total mortgage Amount//calculation8 " + calculation8); 
+           console.log("8. Total mortgage Amount/calculation8 " + Math.round(calculation8)); 
+           
+           //applying a comma to number for better readability
+           let calculation8Punctuating = calculation8.toLocaleString("en-IE");
+           console.log(calculation8Punctuating)
+           document.getElementById("total-repayment-cost").value = calculation8Punctuating; // what prints number TOTAL COST/calculation8
+  
+           let montlyRepayment = calculation8 / calculation1;
+  
+           // if I don't add var = round.math(var) - it will not round
+           montlyRepayment = Math.round(montlyRepayment); 
+           console.log("Monthly Repayment = " + montlyRepayment); 
+  
+           // applying a comma to a number 
+           let  montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
+           document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number  MONTHLY COST
+     
+  }
 
-   let loanTerm = document.getElementById("mortgage-term").value; console.log("loanTerm " + loanTerm); // setting term
 
-   let totalPayouts = loanTerm * 12;  console.log("1. totalPayouts " +totalPayouts); // setting total payouts TP or 1 in
 
-   document.getElementById("year-to-month-conversion").value = totalPayouts;  // what prints the TOTAL PAYOUTS RESULT
- 
-   let yearlyRate = document.getElementById("borrowing-rate").value; //mortgage term
-   console.log("yearlyRate " + yearlyRate);
-
-   let mortgageAmount = document.getElementById("mortgage-amount").value; // mortgage amount
-   console.log("mortgageAmount" + mortgageAmount);
-
-   let montlyRepaymentPunctuating; // had an error 141 that is why i put this var here.
-
-      if (yearlyRate == 0){
+  /*---------------extras 
+  /* calculation6 = mortgageAmount / calculation1; console.log("6. /calculation6 / W " + calculation6); this could be the reason for my formula break?*/
          //Make mortgage amount equal to total cost
-         document.getElementById("total-repayment-cost").value = mortgageAmount;
+         document.getElementById("total-repayment-cost").value = mortgageAmount; console.log("mortgageAmount if statement" + mortgageAmount);
+
+         // Divide mortgage amout by total payouts
+         let montlyRepayment = mortgageAmount / calculation1;
+         // Add a comma to the number result
+
+         montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
+         document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating;  console.log("montlyRepaymentPunctuating if statement" + mortgageAmount);}// what prints MONTLY COST FOR 0 RATE 
+
+
+
+/*      DELETED CODE */
+
+
+function calculateMortgage(event) {
+   event.preventDefault();  console.log("*Function activated");  // disables form being sent off and lets function do the calc
+
+    //  VARIABLES: input field 
+   let loanTerm = document.getElementById("mortgage-term").value; console.log("loanTerm " + loanTerm); // setting term
+   let yearlyRate = document.getElementById("borrowing-rate").value; console.log("yearlyRate " + yearlyRate); // mortgage term
+   let mortgageAmount = document.getElementById("mortgage-amount").value; console.log("mortgageAmount" + mortgageAmount); // mortgage amount
+      // VARIABLES: amortisation formula 
+   let calculation1 = loanTerm * 12; // calculation 1 belongs to both amortisation formula and the output field. it is also used in bot if and else
+   let calculation2;
+   let calculation3;
+   let calculation4;
+   let calculation5;
+   let calculation6;
+   let calculation8;
+      // VARIABLES: output field 
+   let totalMortgageCost;
+   let montlyRepayment;
+   let montlyRepaymentPunctuating;
+
+      if (yearlyRate === 0){
+       
+         //Make mortgage amount equal to total cost
+         document.getElementById("total-repayment-cost").value = mortgageAmount; 
          console.log("mortgageAmount if statement" + mortgageAmount);
 
          // Divide mortgage amout by total payouts
-         let montlyRepayment = mortgageAmount / totalPayouts;
-         // Now let's add a comma to the number result
+         let montlyRepayment = mortgageAmount / calculation1;   //-------error hd monthlyRepayment declared asa new var - mistake
+        
+         // Add a comma to the number result
          montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
-         document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints MONTLY COST FOR 0 RATE
-         console.log("montlyRepaymentPunctuating if statement" + mortgageAmount);
-
+         document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating;  console.log("montlyRepaymentPunctuating if statement" + mortgageAmount);// what prints MONTLY COST FOR 0 RATE
       } else {
          //application of the formula as per lucidchart
-         let montlyTermInterest = yearlyRate / 100 / 12 ;
-         console.log("2. MI " + montlyTermInterest);
-         
-         let p = (1 + montlyTermInterest) ** totalPayouts;
-         console.log("3. P " + p); 
-         
-         let t = p - 1;
-         console.log("4. T " + t); 
-         
-         let b = montlyTermInterest * p;
-         console.log("5. B " + b);
-         
-         let w = t / b
-         
-         w = mortgageAmount / totalPayouts;
-         console.log("6. W " + w);
-            
-         let result = mortgageAmount * w; // Let's call it T - total
-         console.log("7. Result " + result); // e.g number 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
-
-
-         let totalCost = result / totalPayouts; 
+       
+         calculation2 = yearlyRate / 100 / 12 ; console.log("2. MI/montlyTermInterest/calculation2 " + calculation2);
+         calculation3 = (1 + calculation2) ** calculation1; console.log("3. calculation3 / P " + calculation3); 
+         calculation4 = calculation3 - 1; console.log("4. calculation4 /T " + calculation4); 
+         calculation5 = calculation2 * calculation3; console.log("5. B /calculation5 " + calculation5);
+         calculation6 = calculation4 / calculation5; console.log("6. w /calculation6 " + calculation6);
+         calculation2 = mortgageAmount * calculation6;  console.log("7. calculation7 / Result " + calculation2);  // Let's call it T - total --- e.g number 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
+         calculation8 = calculation2 / calculation1; console.log("8. totalCost /calculation8 "+ calculation8);
          // rounding out the number
-         totalCost = Math.round(totalCost); 
-         console.log("8. Total mortgage Amount " + totalCost); 
-         console.log("8. Total mortgage Amount " + Math.round(totalCost)); 
-         
+         calculation8 = Math.round(calculation8); console.log("8. Total mortgage Amount//calculation8 " + calculation8); console.log("8. Total mortgage Amount/calculation8 " + Math.round(calculation8)); 
          //applying a comma to number for better readability
-         let totalCostPunctuating = totalCost.toLocaleString("en-IE");
-         console.log(totalCostPunctuating)
-         document.getElementById("total-repayment-cost").value = totalCostPunctuating; // what prints number TOTAL COST
-
-         let montlyRepayment = totalCost / totalPayouts;
-
+         totalMortgageCost = calculation8.toLocaleString("en-IE"); console.log(totalMortgageCost);
+         montlyRepayment = calculation8 / calculation1;
          // if I don't add var = round.math(var) - it will not round
-         montlyRepayment = Math.round(montlyRepayment); 
-         console.log("Monthly Repayment = " + montlyRepayment); 
-
+         montlyRepayment = Math.round(montlyRepayment); console.log("Monthly Repayment = " + montlyRepayment); 
          // applying a comma to a number 
          montlyRepaymentPunctuating = montlyRepayment.toLocaleString("en-EU");
+         //sending result to the output fields
+         document.getElementById("total-repayment-cost").value = totalMortgageCost; // what prints number TOTAL COST/calculation8 /totalMortgageCost
+         document.getElementById("year-to-month-conversion").value = calculation1;  // what prints the TOTAL PAYOUTS RESULT-----
          document.getElementById("monthly-repayment-cost").value = montlyRepaymentPunctuating; // what prints number  MONTHLY COST
-   } 
+      };
 }
-
