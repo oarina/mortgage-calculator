@@ -2,32 +2,32 @@
 /** collects value from the mortgage amount siler and assigns the same value to the mortgage amount input field */
     function updateMortgageAmount(value) {
       document.getElementById("mortgage-amount").value = value; 
-   };
+   }
 
 /** collects value from the mortgage amount input field and assigns the same value to the mortgage amount slider */
     function updateMortgageSliderAmount(value) {
       document.getElementById("mortgage-slider").value = value;
-   };
+   }
 
 /** collects value from the mortgage rate siler and assigns the same value to the mortgage rate input field */
     function updateBorrowingRateAmount(value) {
       document.getElementById("rate-slider").value = value;
-   };
+   }
 
 /** collects value from the mortgage rate input field and assigns the same value to the mortgage rate slider */
     function updateRateSliderAmount(value){
       document.getElementById("borrowing-rate").value = value;
-   };
+   }
 
 /** collects value from the mortgage term siler and assigns the same value to the mortgage term input field */
     function updateMortgageTermAmunt(value) {
       document.getElementById("term-slider").value = value;
-   };
+   }
 
 /** collects value from the mortgage term input field and assigns the same value to the mortgage term slider */
     function updateTermSliderAmount(value){
       document.getElementById("mortgage-term").value = value;
-   };
+   }
    
 /*-------------------------------------------------------------------------------------------------------------------RESULT FIELD SECTION */
 
@@ -61,7 +61,6 @@ function calculateMortgage(event) {
     if (yearlyRate == 0) {
         // Make mortgage amount equal to total cost
         document.getElementById("total-repayment-cost").value = mortgageAmount;
-        console.log("mortgageAmount if statement" + mortgageAmount);
 
         // Divide mortgage amount by total payouts
         monthlyRepayment = mortgageAmount / calculation1;
