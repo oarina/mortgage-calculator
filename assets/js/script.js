@@ -2,37 +2,31 @@
 /** collects value from the mortgage amount siler and assigns the same value to the mortgage amount input field */
     function updateMortgageAmount(value) {
       document.getElementById("mortgage-amount").value = value; 
-      console.log("mortgage-amount" + value);
    };
 
 /** collects value from the mortgage amount input field and assigns the same value to the mortgage amount slider */
     function updateMortgageSliderAmount(value) {
       document.getElementById("mortgage-slider").value = value;
-      console.log("mortgage-slider" + value);
    };
 
 /** collects value from the mortgage rate siler and assigns the same value to the mortgage rate input field */
     function updateBorrowingRateAmount(value) {
       document.getElementById("rate-slider").value = value;
-      console.log("rate-slider" + value);
    };
 
 /** collects value from the mortgage rate input field and assigns the same value to the mortgage rate slider */
     function updateRateSliderAmount(value){
       document.getElementById("borrowing-rate").value = value;
-      console.log("borrowing-rate" + value);
    };
 
 /** collects value from the mortgage term siler and assigns the same value to the mortgage term input field */
     function updateMortgageTermAmunt(value) {
       document.getElementById("term-slider").value = value;
-      console.log("rate-slider" + value);
    };
 
 /** collects value from the mortgage term input field and assigns the same value to the mortgage term slider */
     function updateTermSliderAmount(value){
       document.getElementById("mortgage-term").value = value;
-      console.log("mortgage-term" + value);
    };
    
 /*-------------------------------------------------------------------------------------------------------------------RESULT FIELD SECTION */
@@ -44,15 +38,11 @@ form.addEventListener("submit",calculateMortgage);
 
 function calculateMortgage(event) {
     event.preventDefault();
-    console.log("*Function activated");
 
     // VARIABLES: input field
     let loanTerm = parseFloat(document.getElementById("mortgage-term").value);
-    console.log("loanTerm " + loanTerm);
     let yearlyRate = parseFloat(document.getElementById("borrowing-rate").value);
-    console.log("yearlyRate " + yearlyRate);
     let mortgageAmount = parseFloat(document.getElementById("mortgage-amount").value);
-    console.log("mortgageAmount" + mortgageAmount);
 
     // VARIABLES: amortization formula
     let calculation1 = loanTerm * 12; // calculation 1 belongs to both amortisation formula and the output field. it is also used in bot if and else
@@ -96,20 +86,16 @@ function calculateMortgage(event) {
 
         // Let's call it T - total --- e.g. number 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
         calculation8 = calculation2 / calculation1;
-        console.log("8. totalCost /calculation8 " + calculation8);
 
         // Rounding out the number
         calculation8 = Math.round(calculation8);
-        console.log("8. Total mortgage Amount/calculation8 " + calculation8);
 
         // Applying a comma to the number for better readability
         totalMortgageCost = calculation8.toLocaleString("en-IE");
-        console.log(totalMortgageCost);
         monthlyRepayment = calculation8 / calculation1;
 
         // If I don't add var = Math.round(var), it will not round
         monthlyRepayment = Math.round(monthlyRepayment);
-        console.log("Monthly Repayment = " + monthlyRepayment);
 
         // Applying a comma to the number
         monthlyRepaymentPunctuating = monthlyRepayment.toLocaleString("en-EU");
@@ -123,12 +109,14 @@ function calculateMortgage(event) {
 
 /*-------------------------------------------------------------------------------------------------------------------LOOP*/
 
-// Sliders are 
 let sliders = document.querySelectorAll('input[type="range"]');
 // Inspired with querySelectorAll here https://itnext.io/5-ways-to-loop-over-dom-elements-from-queryselectorall-in-javascript-55bd66ca4128 
 for (let slider of sliders) {
    slider.addEventListener('input', calculateMortgage);
  }
+
+
+
 
 
 
