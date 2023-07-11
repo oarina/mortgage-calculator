@@ -72,17 +72,11 @@ function calculateMortgage(event) {
     } else {
         // Application of the formula as per lucidchart
         calculation2 = yearlyRate / 100 / 12;
-        console.log("2. MI/montlyTermInterest/calculation2 " + calculation2);
         calculation3 = Math.pow(1 + calculation2, calculation1);
-        console.log("3. calculation3 / P " + calculation3);
         calculation4 = calculation3 - 1;
-        console.log("4. calculation4 /T " + calculation4);
         calculation5 = calculation2 * calculation3;
-        console.log("5. B /calculation5 " + calculation5);
         calculation6 = calculation4 / calculation5;
-        console.log("6. w /calculation6 " + calculation6);
         calculation2 = mortgageAmount * calculation6;
-        console.log("7. calculation7 / Result " + calculation2);
 
         // Let's call it T - total --- e.g. number 19754034.97146661  ----- need to divide this by payouts! IMPORTANT!
         calculation8 = calculation2 / calculation1;
